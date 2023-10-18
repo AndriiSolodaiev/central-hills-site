@@ -1,0 +1,121 @@
+.notFound-bg {
+    background-image: url("../images/sectionsBg/section404.jpg");
+    background-size: cover;
+    padding: 25vh 0px;
+    width: 100vw;
+    height: 100vh;
+
+    @include tablet {}
+
+    @include laptop {}
+
+    @include desktop {}
+}
+
+.notFound__title {
+    width: 100%;
+
+    padding: 20px 10px;
+    margin-bottom: 40px;
+
+    p {
+        text-align: center;
+
+        font-size: 100px;
+        line-height: 90%;
+
+        margin-bottom: 20px;
+
+    }
+
+    h1 {
+
+
+        text-align: center;
+    }
+
+    @include tablet {
+        border-width: 2px;
+
+        p {
+            font-size: 170px;
+        }
+    }
+
+    @include laptop {}
+
+    @include desktop {
+        border-width: 3px;
+
+        p {
+            font-size: 25 0px;
+        }
+    }
+}
+
+.notFound-links__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: center;
+        gap: 60px;
+    }
+
+    @include laptop {}
+
+    @include desktop {}
+
+    .notFound-link__back {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        svg {
+            transform: rotate(180deg)
+        }
+
+        p {}
+
+        @include tablet {
+
+
+            svg {
+
+                width: 35px;
+                height: 45px;
+            }
+        }
+
+        @include laptop {}
+
+        @include desktop {}
+    }
+
+    .notFound-link__main {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        svg {
+            transform: rotate(180deg)
+        }
+
+        p {}
+
+        @include tablet {
+            p {
+                order: -1
+            }
+
+            svg {
+                transform: rotate(0deg);
+                width: 35px;
+                height: 45px;
+            }
+        }
+    }
+}

@@ -1,0 +1,96 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'index'
+    var id_page = 'id-page-index'
+    var class_page = 'class-page-index'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+block content
+  section.section.home-hero
+    .container 
+      .home-hero__title-wrap
+        h1.home-hero__title Central 
+          br
+          | hills
+      .home-hero__text
+        p У 5 хвилинах від центру Києва, між Багриновою та Лисою горами, оповите зеленню, формується нове місто, у якому хочеться жити. 
+      .bg-parallax-wrap
+        img(src="./assets/images/home/hero.jpg" alt="фото" img-paralax)
+  section.section.home-safe 
+    .container
+      .home-safe__text-block-wrap 
+        h2.home-safe__title  Безпечна територія: місце для спокійного життя та відпочинку
+        .home-safe__descr-wrap
+          p.home-safe__descr Крокуйте всередину цього свіжого комплексу Києва з чотирма житловими вежами в його центрі, які стануть новим улюбленим об’єктом на горизонті Києва.
+          a(href="/").general-btn Дізнатися більше
+      .bg-parallax-wrap
+        img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+  section.section.home-sensation 
+    .container
+      h2.home-sensation__title Сенсація на вигляд, і на дотик
+      p.home-sensation__descr Central Hills - це сучасне життя та історія Києва в зеленому оточенні.
+      .home-sensation__img-container 
+        .img-container__img-block
+          img(src="./assets/images/home/hero.jpg" alt="фото" img-paralax)
+          p Зелене оточення
+        .img-container__img-block
+          img(src="./assets/images/home/hero.jpg" alt="фото" img-paralax)
+          p Hills Club
+  section.section.home-safe
+    .container
+      .home-safe__text-block-wrap 
+        h2.home-safe__title Представницькі поверхи: елегантність та розкіш у вищому виконанні
+        .home-safe__descr-wrap 
+          p.home-safe__descr Стандарти сучасного житла — безпека, приватність, емоції! Ми підготували для вас представницькі поверхи найвищого рівня.
+          a(href="/").general-btn Дізнатися більше
+      .bg-parallax-wrap
+        img(src="./assets/images/home/hero.jpg" alt="фото" img-paralax)
+        .bg-img__descr-wrap 
+          h3.bg-img__title Панорамні вікна
+          p.bg-img__text Вид з панорамних вікон на Дніпро
+  section.section.home-sensation.home-arcitech
+    .container
+      h2.home-sensation__title Магія архітектурного мистецтва
+      p.home-sensation__descr Архітектурна вдумливість: гра форм і функціональності
+      .home-arcitech__descr-wrap
+        .home-safe__descr-wrap
+          p.home-safe__descr Поринь у атмосферу прекрасного, в якому ти отримаєш естетичну насолоду, та душевний спокій
+          a(href="/").general-btn Дізнатися більше
+      .home-sensation__img-container 
+        .img-container__img-block
+          img(src="./assets/images/home/hero.jpg" alt="фото" img-paralax)
+          p Зелене оточення
+        .img-container__img-block
+          img(src="./assets/images/home/hero.jpg" alt="фото" img-paralax)
+          p Hills Club
+
+
+
+
+
+
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
