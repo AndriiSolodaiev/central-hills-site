@@ -49,23 +49,32 @@ block content
       p.home-sensation__descr Central Hills - це сучасне життя та історія Києва в зеленому оточенні.
       .home-sensation__img-container 
         .img-container__img-block
-          img(src="./assets/images/home/hero.jpg" alt="фото" img-paralax)
+          img(src="./assets/images/home/sensation.jpg" alt="фото" img-paralax)
           p Зелене оточення
         .img-container__img-block
-          img(src="./assets/images/home/hero.jpg" alt="фото" img-paralax)
+          img(src="./assets/images/home/sensation2.jpg" alt="фото" img-paralax)
           p Hills Club
-  section.section.home-safe
+  section.section.nature
     .container
       .home-safe__text-block-wrap 
         h2.home-safe__title Представницькі поверхи: елегантність та розкіш у вищому виконанні
         .home-safe__descr-wrap 
           p.home-safe__descr Стандарти сучасного житла — безпека, приватність, емоції! Ми підготували для вас представницькі поверхи найвищого рівня.
           a(href="/").general-btn Дізнатися більше
-      .bg-parallax-wrap
-        img(src="./assets/images/home/hero.jpg" alt="фото" img-paralax)
-        .bg-img__descr-wrap 
-          h3.bg-img__title Панорамні вікна
-          p.bg-img__text Вид з панорамних вікон на Дніпро
+      .swiper-luxary
+        .swiper-wrapper 
+          .swiper-slide 
+            .bg-parallax-wrap
+              img(src="./assets/images/home/luxary.jpg" alt="фото" img-paralax)
+            .bg-img__descr-wrap 
+              h3.bg-img__title Панорамні вікна
+              p.bg-img__text Вид з панорамних вікон на Дніпро
+          .swiper-slide 
+            .bg-parallax-wrap
+              img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+            .bg-img__descr-wrap 
+              h3.bg-img__title Високі стелі
+              p.bg-img__text Більше світла — краще настрій
   section.section.home-sensation.home-arcitech
     .container
       h2.home-sensation__title Магія архітектурного мистецтва
@@ -74,13 +83,91 @@ block content
         .home-safe__descr-wrap
           p.home-safe__descr Поринь у атмосферу прекрасного, в якому ти отримаєш естетичну насолоду, та душевний спокій
           a(href="/").general-btn Дізнатися більше
-      .home-sensation__img-container 
-        .img-container__img-block
-          img(src="./assets/images/home/hero.jpg" alt="фото" img-paralax)
-          p Зелене оточення
-        .img-container__img-block
-          img(src="./assets/images/home/hero.jpg" alt="фото" img-paralax)
-          p Hills Club
+      .swiper
+        .swiper-wrapper 
+          .swiper-slide 
+            .home-arcitech__slider-img__wrap
+              img(src="./assets/images/home/architech.jpg" alt="фото" )
+          .swiper-slide 
+            .home-arcitech__slider-img__wrap
+              img(src="./assets/images/home/architech2.jpg" alt="фото" )
+          .swiper-slide 
+            .home-arcitech__slider-img__wrap
+              img(src="./assets/images/home/architech.jpg" alt="фото" )
+  section.section.home-infrastructure.container
+    .home-infrastructure__bg  
+      .home-infrastructure__bg-relative
+        img(src="./assets/images/home/infrastructure.jpg" alt="фото" img-paralax)
+        .home-infrastructure__bg-mask
+
+      h2.home-sensation__title Створюйте майбутнє разом з нами
+      p.home-sensation__descr Внутрішня інфраструктура комплексу
+      .home-arcitech__descr-wrap
+        .home-safe__descr-wrap
+          p.home-safe__descr Central Hills - це справжнє об'єднання природи та сучасної архітектури, де ваше життя процвітає разом із природою
+          a(href="/").general-btn Перейти до 3D
+  section.section.home-invest
+    .container
+      h2.home-sensation__title Створюйте майбутнє разом з нами
+      p.home-sensation__descr Ваша інвестиція у зручність та рентабельність
+      .home-invest__content-wrap
+        .home-invest__img-wrap 
+          img(src="./assets/images/home/invest.jpg" alt="фото" img-paralax)
+        .home-invest__descr-wrap.home-safe__descr-wrap
+          p.home-safe__descr Наша місія - створювати ідеальне середовище для вашого інвестиційного успіху, надійне житло, високі стандарти якості.
+          a(href="/").general-btn Дізнатися більше
+  section.section.home-quality 
+    .container
+      .home-safe__text-block-wrap 
+        +svg("lev-bg")
+        h2.home-safe__title Lev Development: Якість та інновації в житловому будівництві Києва
+        .home-safe__descr-wrap 
+          +svg("lev-logo")
+      .home-quality__descr-wrap
+        p Lev Developer є визнаним лідером у сфері житлового будівництва в Києві. Проекти Lev Developer відомі своєю сучасністю, зручністю та стилем, а їхні об'єкти є популярними серед жителів Києва та інвесторів.
+        p Lev Developer є визнаним лідером у сфері житлового будівництва в Києві. Проекти Lev Developer відомі своєю сучасністю, зручністю та стилем, а їхні об'єкти є популярними серед жителів Києва та інвесторів.
+  section.section.home-infrastructure.container.home-nature
+    .home-infrastructure__bg  
+      .home-infrastructure__bg-relative
+        img(src="./assets/images/home/nature.jpg" alt="фото" img-paralax)
+        .home-infrastructure__bg-mask
+
+      h2.home-sensation__title Зелене Відлуння Сучасного Життя
+      p.home-sensation__descr Central Hills: Де місто зустрічає природу
+      .home-arcitech__descr-wrap
+        .home-safe__descr-wrap
+          p.home-safe__descr Central Hills - це справжнє об'єднання природи та сучасної архітектури, де ваше життя процвітає разом із природою
+          a(href="/").general-btn Дізнатися більше
+  section.section.home-sensation.home-arcitech.progress
+    .container
+      h2.home-sensation__title Створюйте майбутнє разом з нами
+      p.home-sensation__descr Lev Development: Якість та інновації в будівництві Києва
+      .home-arcitech__descr-wrap
+        .home-safe__descr-wrap
+          p.home-safe__descr Lev Developer є визнаним лідером у сфері житлового будівництва в Києві. Проекти Lev Developer відомі своєю сучасністю
+          a(href="/").general-btn Дізнатися більше
+    .swiper-progress
+      .swiper-wrapper 
+        .swiper-slide
+          a(href="/").progress-card 
+            img(src="./assets/images/home/progress1.jpg" alt="prgress")
+            .progress-card__descr-wrap 
+              h3.progress-card__title Ми є визнаним лідером у сфері житлового будівництва в Києві.
+              p.progress-card__date 14.05.2023
+        .swiper-slide
+          a(href="/").progress-card 
+            img(src="./assets/images/home/progress2.jpg" alt="prgress")
+            .progress-card__descr-wrap 
+              h3.progress-card__title Ми є визнаним лідером у сфері житлового будівництва в Києві.
+              p.progress-card__date 14.05.2023
+        .swiper-slide
+          a(href="/").progress-card 
+            img(src="./assets/images/home/progress3.jpg" alt="prgress")
+            .progress-card__descr-wrap 
+              h3.progress-card__title Ми є визнаним лідером у сфері житлового будівництва в Києві.
+              p.progress-card__date 14.05.2023
+
+
 
 
 

@@ -21,7 +21,7 @@ $color-greendark: rgba(34, 54, 43, 1);
 
 @mixin text-style-h-1() {
   font-size: 170px;
-  font-weight: 200;
+  font-weight: 400;
   font-style: normal;
   text-decoration: none;
   text-transform: uppercase;
@@ -42,7 +42,7 @@ $color-greendark: rgba(34, 54, 43, 1);
 @mixin section-descr() {
   font-size: 125px;
   font-family: "HelveticaNeueCyr";
-  font-weight: 200;
+  font-weight: 300;
   font-style: normal;
   line-height: 125px;
   letter-spacing: -2.5px;
@@ -81,7 +81,7 @@ $color-greendark: rgba(34, 54, 43, 1);
   text-transform: none;
 }
 
-@mixin text-style-18-px() {
+@mixin text-style-date() {
   font-size: 18px;
   font-family: "HelveticaNeueCyr";
   font-weight: 300;
