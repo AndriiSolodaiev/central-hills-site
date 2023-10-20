@@ -14,14 +14,15 @@ $bg-color: rgb(233, 233, 225);
 $color-white: rgba(255, 255, 255, 1);
 $color-bej: rgba(198, 166, 130, 1);
 $color-black: rgba(0, 0, 0, 1);
-$color-grey: rgba(52, 71, 66, 1);
+$color-grey: #344742;
 $accent-color: #2a4635;
 $color-grennmedium: rgba(30, 69, 56, 1);
 $color-greendark: rgba(34, 54, 43, 1);
+$text-color: #808080;
 
 @mixin text-style-h-1() {
   font-size: 170px;
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
   text-decoration: none;
   text-transform: uppercase;
@@ -41,29 +42,29 @@ $color-greendark: rgba(34, 54, 43, 1);
 
 @mixin section-descr() {
   font-size: 125px;
-  font-family: "HelveticaNeueCyr";
-  font-weight: 300;
+  font-family: 'HelveticaNeueCyr';
+  font-weight: 200;
   font-style: normal;
   line-height: 125px;
-  letter-spacing: -2.5px;
+  // letter-spacing: -2.5px;
   text-decoration: none;
   text-transform: none;
 }
 
 @mixin section-title() {
   font-size: 64px;
-  font-family: "HelveticaNeueCyr";
+  font-family: 'HelveticaNeueCyr';
   font-weight: 300;
   font-style: normal;
   line-height: 100%;
-  letter-spacing: -0.01em;
+  // letter-spacing: -0.01em;
   text-decoration: none;
   text-transform: none;
 }
 
 @mixin text-style-accent() {
   font-size: 36px;
-  font-family: "HelveticaNeueCyr";
+  font-family: 'HelveticaNeueCyr';
   font-weight: 300;
   font-style: normal;
   // letter-spacing: -0.72px;
@@ -73,7 +74,7 @@ $color-greendark: rgba(34, 54, 43, 1);
 
 @mixin text-style-txt() {
   font-size: 26px;
-  font-family: "HelveticaNeueCyr";
+  font-family: 'HelveticaNeueCyr';
   font-weight: 300;
   font-style: normal;
   line-height: 130%;
@@ -83,7 +84,7 @@ $color-greendark: rgba(34, 54, 43, 1);
 
 @mixin text-style-date() {
   font-size: 18px;
-  font-family: "HelveticaNeueCyr";
+  font-family: 'HelveticaNeueCyr';
   font-weight: 300;
   font-style: normal;
   line-height: 140%;
@@ -93,7 +94,7 @@ $color-greendark: rgba(34, 54, 43, 1);
 
 @mixin text-style-helpfull() {
   font-size: 20px;
-  font-family: "HelveticaNeueCyr";
+  font-family: 'HelveticaNeueCyr';
   font-weight: 300;
   font-style: normal;
   line-height: 130%;
@@ -103,7 +104,7 @@ $color-greendark: rgba(34, 54, 43, 1);
 
 @mixin text-style-btn() {
   font-size: 20px;
-  font-family: "HelveticaNeueCyr";
+  font-family: 'HelveticaNeueCyr';
   font-weight: 300;
   font-style: normal;
   line-height: 140%;
@@ -113,7 +114,7 @@ $color-greendark: rgba(34, 54, 43, 1);
 
 @mixin text-style-minor() {
   font-size: 14px;
-  font-family: "HelveticaNeueCyr";
+  font-family: 'HelveticaNeueCyr';
   font-weight: 300;
   font-style: normal;
   line-height: 130%;

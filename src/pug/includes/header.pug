@@ -15,6 +15,56 @@ header(class="header "+headerCustomClass)
         span.line-under 
 
 .menu__container
+  .menu__bg.container
+    .menu__title-wrap 
+      h2.menu__title Меню
+    .menu__nav-contacts-wrap 
+      nav.header__nav-container
+        ol.nav__list 
+          li 
+            a(href="/").nav__link Головна
+          li 
+            a(href="").nav__link Зелене оточення
+          li 
+            a(href="").nav__link Hills Club
+          li 
+            a(href="").nav__link Представницькі поверхи
+          li 
+            a(href="").nav__link Внутрішня інфраструктура
+          li 
+            a(href="").nav__link Галерея
+          li 
+            a(href="").nav__link Обрати квартиру
+          li 
+            a(href="").nav__link Будівництво
+          li 
+            a(href="documents").nav__link Документи
+          li 
+            a(href="").nav__link Інвесторам
+          li 
+            a(href="").nav__link Контакти
+          li 
+            a(href="").nav__link Безпечна територія
+      .header__contacts-container 
+        a.address__link(href="mailto:centralhills@gmail.com") centralhills@gmail.com
+        a.address__link(href="tel:+380987005700") +380 (98) 700 57 00
+        ul.social__list 
+          li 
+            a.social__link(href="/") Instagram
+            +svg("social-arrow")
+          li 
+            a.social__link(href="/") Youtube
+            +svg("social-arrow") 
+          li 
+            a.social__link(href="/") Facebook
+            +svg("social-arrow")
+          li 
+            a.social__link(href="/") Telegram
+            +svg("social-arrow")
+        button.footer__call-us-btn(type="button") Зв’язатися з нами
+          +svg("arrow")
+
+
 
 
 

@@ -1,0 +1,56 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'documents'
+    var id_page = 'id-page-documents'
+    var class_page = 'class-page-documents'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/documents.bundle.js')
+block content
+  section.documents.container
+    h1.documents__title Документи
+    ul.documents__list 
+      li 
+        a(href="").documents__link
+          p.documents__date 24 липня, 2023
+          h2 Правила та умови придбання
+          p.documents__descr Цей документ містить інформацію про процедуру купівлі квартири, необхідні документи, розмір першого внеску, терміни платежів та інші важливі деталі, які стосуються придбання нерухомості.
+      li 
+        a(href="").documents__link
+          p.documents__date 24 липня, 2023
+          h2 Технічний опис
+          p.documents__descr Документ, що містить технічні характеристики будівлі, матеріалів, які використовуються під час будівництва, а також особливості систем опалення, вентиляції та інших інженерних комунікацій.
+      li 
+        a(href="").documents__link
+          p.documents__date 24 липня, 2023
+          h2 Ліцензії та дозволи
+          p.documents__descr Копії документів, які підтверджують легальність будівництва та діяльності житлового комплексу. Сюди входять будівельна ліцензія, дозволи на виконання робіт, акти прийому-передачі тощо.
+      li 
+        a(href="").documents__link
+          p.documents__date 24 липня, 2023
+          h2 Сертифікати якості
+          p.documents__descr Документація, що підтверджує якість будівельних матеріалів та комплектуючих, які використовуються під час будівництва.
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

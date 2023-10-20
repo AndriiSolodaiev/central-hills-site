@@ -9,7 +9,7 @@ const initParalax = () => {
     wrap.style.overflow = 'hidden';
     wrap.style.height = '100%';
     image.parentElement.prepend(wrap);
-    gsap.set(image, { willChange: 'transform', scale: 1.5 });
+    gsap.set(image, { willChange: 'transform', scale: 1 });
     wrap.prepend(image);
 
     gsap
@@ -26,11 +26,9 @@ const initParalax = () => {
       })
       .fromTo(
         image,
+        { scale: 1 },
         {
-          scale: 1,
-        },
-        {
-          scale: 1.5,
+          scale: 1.3,
 
           ease: 'linear',
         },
