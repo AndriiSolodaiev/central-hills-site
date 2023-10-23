@@ -98,11 +98,13 @@
     height: 70px;
   }
 }
+
 .scroll-down {
   .header__logo {
     transform: scale(0.8) translate(-50%, -50%);
   }
 }
+
 .header__rigth-block {
   display: flex;
   gap: 40px;
@@ -235,8 +237,7 @@
     left: 60px;
   }
 
-  & .contacts__phone {
-  }
+  & .contacts__phone {}
 }
 
 .call-us__content-wrapper {
@@ -308,8 +309,7 @@
   border: none;
   outline: none;
 
-  &::placeholder {
-  }
+  &::placeholder {}
 }
 
 .order-call__submit-btn {
@@ -332,29 +332,34 @@
 .menu__bg {
   width: 100%;
   height: 100%;
-  padding-top: 180px;
+  padding-top: 150px;
   padding-bottom: 100px;
   background: rgba(0, 0, 0, 0.5);
 }
+
 .menu__title-wrap {
   width: 100%;
   padding-bottom: 15px;
   padding-left: 175px;
   border-bottom: 1px solid $color-white;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
+
   .menu__title {
     @include section-title;
     color: $color-white;
   }
 }
+
 .menu__nav-contacts-wrap {
   display: flex;
-  height: 520px;
+  height: 620px;
   justify-content: space-between;
 }
+
 .header__nav-container {
   height: 100%;
 }
+
 .nav__list {
   display: flex;
   flex-direction: column;
@@ -364,6 +369,7 @@
   list-style-type: none;
   counter-reset: item;
   height: 100%;
+
   li {
     display: flex;
     width: 30vw;
@@ -380,6 +386,7 @@
     color: $color-white;
   }
 }
+
 .nav__link {
   @include text-style-txt;
   color: $color-white;
@@ -398,18 +405,22 @@
     font-size: 26px;
     margin-bottom: 0;
   }
+
   .social__list {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     max-width: 360px;
+
     li {
       margin-bottom: 0;
+
       .social__link {
         font-size: 26px;
       }
     }
   }
+
   .footer__call-us-btn {
     margin-bottom: 0;
   }

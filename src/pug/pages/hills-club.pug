@@ -1,0 +1,96 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'hills-club'
+    var id_page = 'id-page-hills-club'
+    var class_page = 'class-page-hills-club'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/hills-club.bundle.js')
+block content
+  section.documents.container
+    h1.page__title Hills club
+    .home-safe__text-block-wrap 
+      h2.home-safe__title  Консьєрж сервіс
+      .home-safe__descr-wrap
+        p.home-safe__descr Ваші будь-які потреби можуть бути задоволені завдяки команді консьєржів, доступних для обслуговування цілодобово.
+    .bg-parallax-wrap
+      img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+  section.section.nature
+    .container
+      .home-safe__text-block-wrap 
+        h2.home-safe__title Енергія життя: спортовий пульс та динаміка руху
+        .home-safe__descr-wrap 
+          p.home-safe__descr Central Hills пропонує повний спектр спортивних розваг: фітнес-клуб, басейн, тенісний корт та футбольне поле. Ваш активний спосіб життя починається тут.
+
+      .swiper-luxary
+        .swiper-wrapper 
+          .swiper-slide 
+            .bg-parallax-wrap
+              img(src="./assets/images/home/luxary.jpg" alt="фото" img-paralax)
+            .bg-img__descr-wrap 
+              h3.bg-img__title Фітнес клуб
+              p.bg-img__text Сучасні тренажери та професійні тренери
+          .swiper-slide 
+            .bg-parallax-wrap
+              img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+            .bg-img__descr-wrap 
+              h3.bg-img__title Великий Басейн
+              p.bg-img__text Басейн довжиною 30м
+          .swiper-slide 
+            .bg-parallax-wrap
+              img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+            .bg-img__descr-wrap 
+              h3.bg-img__title Тенісний кор
+              p.bg-img__text Якісне покриття та великий простір
+          .swiper-slide 
+            .bg-parallax-wrap
+              img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+            .bg-img__descr-wrap 
+              h3.bg-img__title Футбольне поле
+              p.bg-img__text Професійне поле з трав’яним покриттям
+  section.section.hills-club-cinema.container
+    .cinema__content-wrap 
+      .cinema__text-wrap 
+        .cinema__align-wrap
+          h3 Приватний кінотеатр
+          p Приватний кінотеатр, який призначений виключно для мешканців, - це найвищий ступінь розкішної розваги, всього кілька кроків від вашої двері. Чи це відзначення річниці, чи просто чудова ніч із друзями, ми можемо забезпечити класичний кінодосвід і фільм на вибір.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+    .cinema__content-wrap 
+      .cinema__text-wrap
+        .cinema__align-wrap 
+          h3 Party room-укриття
+          p На мінус другому поверсі ви знайдете просторі кімнати, призначені для вашої розваги та свят. Тут є все необхідне: кухні, ванні кімнати, зручні дивани, столи, техніка, музика та караоке. Але що найголовніше, у разі небезпеки ці приміщення стануть вашими найкращими укриттями. За рахунок свого розміщення та звукоізоляції вони не лише не заважатимуть решті резидентів, але й забезпечать вашу безпеку та комфорт.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+  section.section.home-sensation.safe-parking
+    .container
+      h2.home-sensation__title Де Кожна Ягода – Це Ваша Радість
+      p.home-sensation__descr Відчуйте смак життя у власному фруктовому саду
+      .home-quality__descr-wrap
+        p Відкритий, але захищений  — це місце, де можна насолодитися склянкою шампанського та неймовірними видами. 
+        p Стильний і розслабляючий, це ще один сучасний зелений простір у  житловому комплексі Central Hills.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

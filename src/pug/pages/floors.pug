@@ -1,0 +1,74 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'floors'
+    var id_page = 'id-page-floors'
+    var class_page = 'class-page-floors'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/floors.bundle.js')
+block content
+  section.documents.container
+    h1.page__title представницькі поверхи
+    .home-safe__text-block-wrap 
+      h2.home-safe__title  Дизайнерський Хол
+      .home-safe__descr-wrap
+        p.home-safe__descr Це перше місце, де ви відчуєте: "Нарешті, я вдома." Тому ми доручили студії дизайну та архітектури High Architects створити цей простір.
+    .bg-parallax-wrap
+      img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+  section.section.hills-club-cinema.container
+    .cinema__content-wrap 
+      .cinema__text-wrap 
+        .cinema__align-wrap
+          h3 Надійні Двері та Замки
+          p Вхідні групи квартир на цих поверхах обладнані дверима та замками преміум-класу. Для нас важлива не лише естетика, але й ваша безпека.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+    .cinema__content-wrap 
+      .cinema__text-wrap
+        .cinema__align-wrap 
+          h3 Додаткова Приватність
+          p За допомогою системи персональних електронних ключів на поверх можуть підніматися тільки його мешканці.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+  section.section.home-quality.location-harmony
+    .container.location__harmony-container
+      .home-safe__text-block-wrap 
+
+        h2.home-safe__title Високі Стелі: Простір та Свобода в Central Hills
+        .home-safe__descr-wrap 
+
+      .home-quality__descr-wrap
+        p 3-метрові стелі створюють візуальний відчуття більшого простору в кімнатах, а великі панорамні вікна дозволяють потрапити більшій кількості світла.
+        p Це вражаюче відчуття простору і світла надає квартирам особливий шарм та атмосферу. Приміщення наповнюються свіжістю і енергією завдяки натуральному світлу, що проникає всюди через великі вікна.
+  section.section.home-invest.location-calm
+    .container
+      h2.home-sensation__title Тиша в домі, спокій в душі
+      p.home-sensation__descr Central Hills: спокійне життя з покращеною шумоізоляцією
+      .home-invest__content-wrap
+        .home-invest__img-wrap 
+          img(src="./assets/images/home/invest.jpg" alt="фото" img-paralax)
+        .home-invest__descr-wrap.home-safe__descr-wrap
+          p.home-safe__descr Навіть найголосніші вечірки чи зібрання сусідів не завадять вашій тиші, оскільки ми піклуємося про підвищену міжповерхову шумоізоляцію.
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

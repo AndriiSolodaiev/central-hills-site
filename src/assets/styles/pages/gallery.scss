@@ -1,0 +1,80 @@
+.gallery__filter-btn-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.gallery__filter-btn {
+  @include text-style-btn;
+  color: $accent-color;
+  padding: 10px 18px;
+  border: 1px solid $accent-color;
+  border-radius: 32px;
+
+  &.active {
+    color: $color-white;
+    background-color: $accent-color;
+  }
+}
+
+.swiper-gallery {
+  position: relative;
+}
+
+.swiper-gallery .swiper-button-prev {
+  position: absolute;
+  left: 90px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: $accent-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: opacity 0.3s ease-in-out;
+
+
+  svg {
+
+    transform: scale(0.7) rotate(180deg);
+  }
+
+}
+
+
+
+.swiper-gallery .swiper-button-next {
+  position: absolute;
+  right: 90px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: $accent-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: opacity 0.3s ease-in-out;
+
+
+  svg {
+    transform: scale(0.7);
+  }
+
+}
+
+.swiper-gallery>.swiper-button-disabled {
+
+  pointer-events: none;
+  opacity: 0;
+
+}

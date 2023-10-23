@@ -12,12 +12,12 @@ block variable
         link: pagesLink[0].about
       }
     ]
-  
+
 block meta
   title= title_page
-  meta(name='description', content='')
+  meta(name='description' content='')
 block head
-    link(rel='stylesheet', href="./assets/styles/main.min.css")
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
 block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/header.bundle.js')
@@ -25,7 +25,7 @@ block scripts
   script(defer src='./assets/scripts/documents.bundle.js')
 block content
   section.documents.container
-    h1.documents__title Документи
+    h1.page__title Документи
     ul.documents__list 
       li 
         a(href="").documents__link

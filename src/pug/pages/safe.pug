@@ -1,0 +1,72 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'safe'
+    var id_page = 'id-page-safe'
+    var class_page = 'class-page-safe'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/safe.bundle.js')
+block content
+  section.documents.container.safe
+    h1.page__title Безпечна територія
+    .home-safe__text-block-wrap 
+      h2.home-safe__title Внутрішній двір комплексу без авто
+      .home-safe__descr-wrap
+        p.home-safe__descr Унікальний куточок спокою в міському лабіринті. Місцвева флора створюює ідеальні умови для відпочинку. Люди можуть насолодитися природою і спокоєм, віддаючи перевагу спілкуванню та відпочинку.
+    .bg-parallax-wrap
+      img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+  section.section.home-quality.location-harmony.safe-parking
+    .container.location__harmony-container
+      .home-safe__text-block-wrap 
+
+        h2.home-safe__title Дворівневий підземний паркінг з коефіцієнтом 1.2х
+        .home-safe__descr-wrap 
+
+      .home-quality__descr-wrap
+        p Цей сучасний паркінг пропонує два рівні для стоянки автомобілів, збільшуючи вмісткість на 20% порівняно з традиційними паркінгами. Коефіцієнт 1.2х означає, що паркінг може вмістити 20% більше автомобілів, ніж його загальна ємність.
+        p Це забезпечує ефективне використання простору і робить його ідеальним вибором для місць з обмеженою площею. Безпека, зручність та велика кількість доступних місць роблять цей паркінг ідеальним варіантом для власників автомобілів у міському середовищі.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+  section.section.home-infrastructure.container.safe-area
+    .home-infrastructure__bg  
+      .home-infrastructure__bg-relative
+        img(src="./assets/images/home/infrastructure.jpg" alt="фото" img-paralax)
+        .home-infrastructure__bg-mask
+
+      h2.home-sensation__title Спокій та безпека власної території
+      p.home-sensation__descr Приватна територія в розпорядженні резидентів
+      .home-arcitech__descr-wrap
+        .home-safe__descr-wrap
+          p.home-safe__descr Простір спокою та приватності, де безпека резидентів на першому місці. Це місце, де естетика та безпека зустрічаються, створюючи ідеальне середовище для комфортного життя.
+  section.section.home-safe 
+    .container
+      .home-safe__text-block-wrap 
+        h2.home-safe__title  Party room-укритя для резидентів
+        .home-safe__descr-wrap
+          p.home-safe__descr Наше укриття забезпечує найвищий рівень захисту в непередбачених ситуаціях, створюючи відчуття надійності та безпеки для всіх наших мешканців
+
+      .bg-parallax-wrap
+        img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

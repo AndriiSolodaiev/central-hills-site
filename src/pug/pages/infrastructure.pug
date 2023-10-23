@@ -1,0 +1,101 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'infrastructure'
+    var id_page = 'id-page-infrastructure'
+    var class_page = 'class-page-infrastructure'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/infrastructure.bundle.js')
+block content
+  section.documents.container
+    h1.page__title внутрішня інфраструктура
+    .home-safe__text-block-wrap 
+      h2.home-safe__title  Дитячий садок та школа від ThinkGlobal
+      .home-safe__descr-wrap
+        p.home-safe__descr Тут ваші діти матимуть можливість рости та навчатися в ідеальному середовищі завдяки нашому дитячому садку та школі ThinkGlobal.
+    .bg-parallax-wrap
+      img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+  section.section.nature
+    .container
+      .home-safe__text-block-wrap 
+        h2.home-safe__title Кулінарна атмосфера: смакові шедеври та рукодільні знахідки
+        .home-safe__descr-wrap 
+          p.home-safe__descr Наші заклади — це місце, де кожна страва — це майстерність, а кожний кавовий аромат — історія. Завітайте і зануртеся у світ смаку та витонченості
+
+      .swiper-luxary
+        .swiper-wrapper 
+          .swiper-slide 
+            .bg-parallax-wrap
+              img(src="./assets/images/home/luxary.jpg" alt="фото" img-paralax)
+            .bg-img__descr-wrap 
+              h3.bg-img__title Затишні кав’ярні
+              p.bg-img__text Завжди смачна та різноманітна кава
+          .swiper-slide 
+            .bg-parallax-wrap
+              img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+            .bg-img__descr-wrap 
+              h3.bg-img__title ресторани та кафе
+              p.bg-img__text Американська, східна та італійська кухні
+          .swiper-slide 
+            .bg-parallax-wrap
+              img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+            .bg-img__descr-wrap 
+              h3.bg-img__title крафтові магазини  
+              p.bg-img__text Якісне покриття та великий простір
+
+  section.section.hills-club-cinema.container
+    .cinema__content-wrap 
+      .cinema__text-wrap 
+        .cinema__align-wrap
+          h3 Салони краси та барбершоп
+          p У наших салонах краси та барбершопах ми перетворюємо ваші бажання на стильну реальність. Тут кожен візит — це спеціальний момент, де експерти з краси втілюють ваші ідеї у вишуканий образ.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+    .cinema__content-wrap 
+      .cinema__text-wrap
+        .cinema__align-wrap 
+          h3 Торгівельний центр
+          p Ласкаво просимо до нашого торгового центру, де мода зустрічається з комфортом, а культура покупок трансформується у вражаючий досвід. Тут ви знайдете найновіші тренди, розкошні бренди та неперевершену атмосферу.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+  section.section.home-quality.location-harmony.safe-parking.infrastructure-spa
+    .container.location__harmony-container
+      h2.home-sensation__title Гармонія Тіла та Душі
+      p.home-sensation__descr Ідеальна гармонія: фітнес та СПА в Central Hills
+      .home-quality__descr-wrap
+        p Наш сучасний фітнес центр оснащений передовими тренажерами та програмами, що допоможуть вам досягти своїх спортивних цілей.
+        p А в нашому СПА, ви зможете поглибити розслаблення та оздоровлення завдяки різноманітним процедурам і масажам.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+  section.section.home-safe.infrastructure-cinema
+    .container
+      .home-safe__text-block-wrap 
+        h2.home-safe__title  Кінотеатр під вікритим небом
+        .home-safe__descr-wrap
+          p.home-safe__descr Насолоджуйтесь переглядом новинок де кожна сцена стає чарівною під сяючими зірками, роблячи ваші вечори незабутніми.
+
+      .bg-parallax-wrap
+        img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

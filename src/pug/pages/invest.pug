@@ -1,0 +1,58 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'invest'
+    var id_page = 'id-page-invest'
+    var class_page = 'class-page-invest'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/invest.bundle.js')
+block content
+  section.documents.container
+    h1.page__title інвесторам
+    .home-safe__text-block-wrap 
+      h2.home-safe__title Інвестуйте разом з LEV Development
+      .home-safe__descr-wrap
+        p.home-safe__descr Інвестування в об’єкти LEV DEVELOPMENT — це належне вкладання капіталу. Це ультрасучасні житлові комплекси і кожен проект — єдиний в своєму роді.
+    .bg-parallax-wrap
+      img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+  section.section.invest-graph
+  section.section.home-invest.location-calm
+    .container
+      h2.home-sensation__title Сучасність та надійність
+      p.home-sensation__descr Лідерство в індустрії: якість, інновації та відданість
+      .home-invest__content-wrap
+        .home-invest__img-wrap 
+          img(src="./assets/images/home/invest.jpg" alt="фото" img-paralax)
+        .home-invest__descr-wrap.home-safe__descr-wrap
+          p.home-safe__descr У 140 гектарах непорушеної природи розташовані наші стильні багатоповерхові будинки. Кожен проект це злагоджене поєднання сучасності та естетики. Ми створюємо не просто квартири, а неповторний світ, де кожен момент - це неперевершений досвід.
+  section.section.home-sensation.safe-parking.green-garden
+    .container
+      h2.home-sensation__title Сучасність та надійність
+      p.home-sensation__descr Інвестиційно-девелоперська компанія
+      .home-quality__descr-wrap
+        p LEV Development» пропонує своїм клієнтам не лише квадратні метри, створені сучасними технологіями, а й гармонійний простір для життя.
+        p  Адже придбавши нерухомість, ви отримуєте комфорт та затишок на кожному етапі.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

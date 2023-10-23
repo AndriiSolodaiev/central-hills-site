@@ -10,6 +10,10 @@ const config = {
     header: './src/assets/scripts/modules/header/header.js',
     footer: './src/assets/scripts/modules/footer/footer.js',
     documents: './src/assets/scripts/gulp-modules/documents.js',
+    gallery: './src/assets/scripts/gulp-modules/gallery.js',
+    safe: './src/assets/scripts/gulp-modules/safe.js',
+    green: './src/assets/scripts/gulp-modules/green.js',
+    hillsClub: './src/assets/scripts/gulp-modules/hills-club.js',
   },
   output: {
     filename: '[name].bundle.js',

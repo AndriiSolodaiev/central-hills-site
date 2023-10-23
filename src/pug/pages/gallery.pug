@@ -1,0 +1,53 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'gallery'
+    var id_page = 'id-page-gallery'
+    var class_page = 'class-page-gallery'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/gallery.bundle.js')
+block content
+  section.documents.container
+    h1.page__title Галерея
+    ul.gallery__filter-btn-list 
+      li 
+        button(type="button" data-gallery-fltr-btn="views").gallery__filter-btn.active Краєвиди
+      li 
+        button(type="button" data-gallery-fltr-btn="exterior").gallery__filter-btn Екстер'єр
+      li 
+        button(type="button" data-gallery-fltr-btn="interior").gallery__filter-btn Інтер'єр
+      li 
+        button(type="button" data-gallery-fltr-btn="relax").gallery__filter-btn Зони відпочинку
+    .swiper-gallery
+      .swiper-button-prev
+        +svg("arrow")
+      .swiper-button-next
+        +svg("arrow")
+      .swiper-wrapper.views
+        .swiper-slide
+          img(src="./assets/images/home/luxary.jpg" alt="фото")
+        .swiper-slide
+          img(src="./assets/images/home/luxary.jpg" alt="фото")
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

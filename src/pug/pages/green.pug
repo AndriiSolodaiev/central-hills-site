@@ -1,0 +1,93 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'green'
+    var id_page = 'id-page-green'
+    var class_page = 'class-page-green'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/green.bundle.js')
+block content
+  section.documents.container
+    h1.page__title зелене оточення
+    .home-safe__text-block-wrap 
+      h2.home-safe__title Ланшафтний парк: природна краса вашого дому
+      .home-safe__descr-wrap
+        p.home-safe__descr Тут кожен день - це зустріч з розкішною рослинністю та тишею, де ви можете насолоджуватися природною красою прямо за вікном свого дому.
+    .bg-parallax-wrap
+      img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+  section.section.home-quality.safe-parking.green-park
+    .container.location__harmony-container
+      .home-safe__text-block-wrap 
+
+        h2.home-safe__title 2 Га недоторканої паркової зони в середині комплексу
+        .home-safe__descr-wrap 
+
+      .home-quality__descr-wrap
+        p Два гектари недоторканої паркової зони, вкритої вічнозеленими деревами та квітучими рослинами, розташовані прямо в серці нашого житлового комплексу. 
+        p Це унікальне просторове рішення, яке дарує нашим мешканцям можливість насолоджуватися величезним природним резерватом прямо під вікнами своїх домів.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+  section.section.nature
+    .container
+      .home-safe__text-block-wrap 
+        h2.home-safe__title Натхнення та насолода: відпочинок, гра, смак та ласка для пухнастих друзів.
+        .home-safe__descr-wrap 
+          p.home-safe__descr Неповторне озеро Лукрець, різноманітні дитячі розваги, альтанки з можливістю готування на BBQ та простора зона для вашого чотирилапого друга.
+
+      .swiper-luxary
+        .swiper-wrapper 
+          .swiper-slide 
+            .bg-parallax-wrap
+              img(src="./assets/images/home/luxary.jpg" alt="фото" img-paralax)
+            .bg-img__descr-wrap 
+              h3.bg-img__title озеро лукрець
+              p.bg-img__text Власне озеро під будинком
+          .swiper-slide 
+            .bg-parallax-wrap
+              img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+            .bg-img__descr-wrap 
+              h3.bg-img__title дитячі майданчики
+              p.bg-img__text Різноманітні майданчики для діток різного віку
+          .swiper-slide 
+            .bg-parallax-wrap
+              img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+            .bg-img__descr-wrap 
+              h3.bg-img__title Альтанки з bbq
+              p.bg-img__text Місце для відпочинку з друзями
+          .swiper-slide 
+            .bg-parallax-wrap
+              img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+            .bg-img__descr-wrap 
+              h3.bg-img__title Зони для чотирилапих
+              p.bg-img__text Місця для вигулу ваших улюбленців
+  section.section.home-sensation.safe-parking.green-garden
+    .container
+      h2.home-sensation__title Де Кожна Ягода – Це Ваша Радість
+      p.home-sensation__descr Відчуйте смак життя у власному фруктовому саду
+      .home-quality__descr-wrap
+        p У нашому вишуканому житловому комплексі вас вітає власний фруктовий сад, де кожен день - це справжня гастрономічна подорож.
+        p Тут, серед ароматних апельсинів, соковитих яблук та солодких вишень, ви зможете насолоджуватися смаком свіжих фруктів прямо з гілки.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

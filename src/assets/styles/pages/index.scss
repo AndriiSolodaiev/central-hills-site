@@ -156,10 +156,11 @@
 
 .bg-img__title {
   @include section-descr;
-  max-width: 700px;
+  max-width: 900px;
   color: $color-white;
   margin-bottom: 36px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .bg-img__text {
