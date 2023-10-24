@@ -1,0 +1,62 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'progress'
+    var id_page = 'id-page-progress'
+    var class_page = 'class-page-progress'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/progress.bundle.js')
+block content
+  section.documents.container
+    h1.page__title Хід Будівництва
+    .progress__container
+      .progress-card(data-card-id="1")
+        .progrss-img-wrap 
+          img(src="./assets/images/home/progress2.jpg" alt="prgress")
+        .progress-card__descr-wrap 
+          h3.progress-card__title Ми є визнаним лідером у сфері житлового будівництва в Києві.
+          p.progress-card__date 14.05.2023
+      .progress-card(data-card-id="2")
+        .progrss-img-wrap 
+          img(src="./assets/images/home/progress2.jpg" alt="prgress")
+        .progress-card__descr-wrap 
+          h3.progress-card__title Ми є визнаним лідером у сфері житлового будівництва в Києві.
+          p.progress-card__date 14.05.2023
+      .progress-card(data-card-id="3")
+        .progrss-img-wrap 
+          img(src="./assets/images/home/progress2.jpg" alt="prgress")
+        .progress-card__descr-wrap 
+          h3.progress-card__title Ми є визнаним лідером у сфері житлового будівництва в Києві.
+          p.progress-card__date 14.05.2023
+      .progress-card(data-card-id="4") 
+        .progrss-img-wrap 
+          img(src="./assets/images/home/progress2.jpg" alt="prgress")
+        .progress-card__descr-wrap 
+          h3.progress-card__title Ми є визнаним лідером у сфері житлового будівництва в Києві.
+          p.progress-card__date 14.05.2023
+  .overflow
+    .progress-pop-up 
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

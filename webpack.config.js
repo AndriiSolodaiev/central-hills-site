@@ -14,6 +14,13 @@ const config = {
     safe: './src/assets/scripts/gulp-modules/safe.js',
     green: './src/assets/scripts/gulp-modules/green.js',
     hillsClub: './src/assets/scripts/gulp-modules/hills-club.js',
+    infrastructure: './src/assets/scripts/gulp-modules/infrastructure.js',
+    invest: './src/assets/scripts/gulp-modules/invest.js',
+    location: './src/assets/scripts/gulp-modules/location.js',
+    floors: './src/assets/scripts/gulp-modules/floors.js',
+    contacts: './src/assets/scripts/gulp-modules/contacts.js',
+    safe: './src/assets/scripts/gulp-modules/safe.js',
+    progress: './src/assets/scripts/gulp-modules/progress.js',
   },
   output: {
     filename: '[name].bundle.js',
