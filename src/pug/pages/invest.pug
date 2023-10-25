@@ -32,8 +32,22 @@ block content
         p.home-safe__descr Інвестування в об’єкти LEV DEVELOPMENT — це належне вкладання капіталу. Це ультрасучасні житлові комплекси і кожен проект — єдиний в своєму роді.
     .bg-parallax-wrap
       img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
-  section.section.invest-graph
-  section.section.home-invest.location-calm
+  section.section.invest-graph.container
+    <svg width="660" height="220" class="none">
+      <defs>
+        <defs>
+          <linearGradient id="chart-gradient" x1="568.5" y1="0" x2="568.5" y2="463" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C6A682"/>
+            <stop offset="1" stop-color="#C6A682" stop-opacity="0"/>
+          </linearGradient>
+          </defs>
+      </defs>
+
+    </svg>
+    h2.invest-graph__title Оцініть середню прибутковість інвестицій
+
+    .graph(id="chart")
+  section.section.home-invest.location-calm.invest__leader
     .container
       h2.home-sensation__title Сучасність та надійність
       p.home-sensation__descr Лідерство в індустрії: якість, інновації та відданість
@@ -41,7 +55,19 @@ block content
         .home-invest__img-wrap 
           img(src="./assets/images/home/invest.jpg" alt="фото" img-paralax)
         .home-invest__descr-wrap.home-safe__descr-wrap
-          p.home-safe__descr У 140 гектарах непорушеної природи розташовані наші стильні багатоповерхові будинки. Кожен проект це злагоджене поєднання сучасності та естетики. Ми створюємо не просто квартири, а неповторний світ, де кожен момент - це неперевершений досвід.
+          .leader__descr-wrap
+            .leader__text-wrap
+              div
+                h3(data-count="720000") 720 000 
+                span м²
+              p Побудовано
+            .leader__text-wrap
+              h3(data-count="28") 28
+              p Релізованих об’єктів
+            .leader__text-wrap
+              h3(data-count="14") 14
+              p Років на ринку
+
   section.section.home-sensation.safe-parking.green-garden
     .container
       h2.home-sensation__title Сучасність та надійність
@@ -52,6 +78,7 @@ block content
       .bg-parallax-wrap
         img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
 block footer
+
   include ../includes/footer.pug
 
 block header

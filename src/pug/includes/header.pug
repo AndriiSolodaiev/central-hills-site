@@ -1,7 +1,7 @@
 header(class="header "+headerCustomClass)
   .container.header-bg  
-    button.call-us__btn Зворотній дзвінок
-    .header__logo 
+    button.call-us__btn(data-call-us-btn) Зворотній дзвінок
+    a(href="/").header__logo 
       +svg("logo")
     .header__rigth-block
       ul.language__list 
@@ -63,8 +63,18 @@ header(class="header "+headerCustomClass)
           li 
             a.social__link(href="/") Telegram
             +svg("social-arrow")
-        button.footer__call-us-btn(type="button") Зв’язатися з нами
+        button.footer__call-us-btn(type="button" data-call-us-btn) Зв’язатися з нами
           +svg("arrow")
+.overflow.hidden(data-call-us-modal) 
+  .call-us__container
+    button(type="button" data-call-us-modal-close).close-btn 
+      +svg("cross")
+    .call-us__title-wrap 
+      h2 Замовити дзвінок
+      p Якшо у вас виникли питання, залиште свій номер і ми передзвонимо вам:
+    +form
+
+
 
 
 

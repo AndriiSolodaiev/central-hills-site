@@ -1,0 +1,87 @@
+.invest-graph {
+  background-color: $color-grey;
+  padding-top: 150px;
+  padding-bottom: 150px;
+
+  .graph {
+    height: 30vw;
+
+    .c3-line-profit {
+      stroke: #C6A682 !important;
+      stroke-width: 2px;
+
+    }
+
+    .c3-axis-y text,
+    .c3-axis-x text {
+      fill: $color-white;
+      font-size: 18px;
+      font-family: $default-font;
+
+    }
+
+    .domain {
+      stroke: $color-white ;
+    }
+
+
+  }
+}
+
+.invest-graph__title {
+  @include section-title;
+  color: $color-white;
+  margin-bottom: 100px;
+}
+
+.invest__leader {
+  .home-safe__descr-wrap {
+    align-items: center;
+  }
+
+  .leader__descr-wrap {
+    height: 100%;
+
+    display: flex;
+
+    justify-content: space-around;
+    flex-direction: column;
+
+    .leader__text-wrap {
+      h3 {
+        @include section-title;
+        color: $color-white;
+
+      }
+
+      div {
+        @include section-title;
+        color: $color-white;
+        display: flex;
+
+        span {
+          margin-left: 10px
+        }
+      }
+
+      p {
+        @include text-style-txt;
+        color: $color-white;
+
+      }
+    }
+  }
+}
+
+.c3-area-profit {
+  fill: url('#chart-gradient') !important;
+  opacity: 1 !important;
+}
+
+.none {
+  width: 0;
+  height: 0;
+  position: absolute;
+  visibility: hidden;
+
+}

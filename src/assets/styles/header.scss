@@ -35,7 +35,7 @@
   }
 
   @include laptop {
-    height: 100px;
+    height: 80px;
     justify-content: space-between;
   }
 
@@ -89,8 +89,8 @@
   }
 
   @include laptop {
-    width: 133.877px;
-    height: 70px;
+    width: 100.407px;
+    height: 52.5px;
   }
 
   @include desktop {
@@ -101,12 +101,13 @@
 
 .scroll-down {
   .header__logo {
-    transform: scale(0.8) translate(-50%, -50%);
+    transform: scale(0.8) translate(-50%, -70%);
   }
 }
 
 .header__rigth-block {
   display: flex;
+  align-items: center;
   gap: 40px;
 }
 
@@ -141,6 +142,8 @@
   color: $color-white;
   border: none;
   background: $accent-color;
+  display: flex;
+  align-items: center;
 }
 
 // .header__logo {
@@ -332,7 +335,7 @@
 .menu__bg {
   width: 100%;
   height: 100%;
-  padding-top: 150px;
+  padding-top: 120px;
   padding-bottom: 100px;
   background: rgba(0, 0, 0, 0.5);
 }
@@ -354,10 +357,21 @@
   display: flex;
   height: 620px;
   justify-content: space-between;
+
+  @include tablet {}
+
+  @include laptop {
+    height: 380px;
+  }
+
+  @include desktop {
+    height: 620px;
+  }
 }
 
 .header__nav-container {
   height: 100%;
+
 }
 
 .nav__list {
@@ -369,6 +383,18 @@
   list-style-type: none;
   counter-reset: item;
   height: 100%;
+
+  @include tablet {}
+
+  @include laptop {
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+
+  @include desktop {
+    column-gap: 40px;
+    row-gap: 50px;
+  }
 
   li {
     display: flex;

@@ -4,6 +4,18 @@
 
 .home-hero {
   padding-top: 206px;
+
+  @include tablet {
+    padding-top: 206px;
+  }
+
+  @include laptop {
+    padding-top: 180px;
+  }
+
+  @include desktop {
+    padding-top: 206px;
+  }
 }
 
 .home-hero__title-wrap {
@@ -74,7 +86,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 82px;
+  margin-bottom: 50px;
 }
 
 .home-safe__title {
@@ -109,6 +121,18 @@
   @include text-style-accent;
   color: $color-grey;
   margin-bottom: 60px;
+
+  @include tablet {
+    margin-bottom: 60px;
+  }
+
+  @include laptop {
+    margin-bottom: 38px;
+  }
+
+  @include desktop {
+    margin-bottom: 60px;
+  }
 }
 
 .home-sensation__descr {
@@ -152,10 +176,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  overflow: hidden
 }
 
 .bg-img__title {
   @include section-descr;
+
   max-width: 900px;
   color: $color-white;
   margin-bottom: 36px;
