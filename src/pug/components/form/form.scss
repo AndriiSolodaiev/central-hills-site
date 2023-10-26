@@ -15,6 +15,7 @@
     pointer-events: none;
     max-height: 0;
   }
+
 }
 
 .call-us__container {
@@ -28,10 +29,18 @@
   opacity: 1;
 
   .hidden & {
-
     transform: translate(-50%, -20%);
     opacity: 0;
+  }
 
+  @include tablet {}
+
+  @include laptop {
+    padding: 100px 100px;
+  }
+
+  @include desktop {
+    padding: 100px 120px;
   }
 }
 
@@ -53,6 +62,16 @@
     height: 24px;
   }
 
+  @include laptop {
+    top: 30px;
+    right: 30px;
+  }
+
+  @include desktop {
+    top: 50px;
+    right: 50px;
+  }
+
 }
 
 .call-us__title-wrap {
@@ -72,6 +91,16 @@
     @include text-style-txt;
     color: $color-grey;
     width: 600px;
+
+    @include tablet {}
+
+    @include laptop {
+      width: 500px;
+    }
+
+    @include desktop {
+      width: 600px;
+    }
   }
 }
 
@@ -96,7 +125,7 @@
 
   @include laptop {
     flex-direction: row;
-    gap: 120px;
+    gap: 100px;
     margin-bottom: 40px;
 
   }
@@ -132,7 +161,7 @@
   }
 
   @include laptop {
-    width: 470px;
+    width: 500px;
     text-align: start;
   }
 
@@ -166,7 +195,15 @@
   .form__disclaimer {
     @include text-style-minor;
     color: #7A7A7A;
-    width: 600px
+    width: 600px;
+
+    @include laptop {
+      width: 500px;
+    }
+
+    @include desktop {
+      width: 600px;
+    }
   }
 }
 
