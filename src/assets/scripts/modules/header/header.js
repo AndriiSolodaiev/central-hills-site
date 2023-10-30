@@ -63,12 +63,12 @@ tl.add(() => {
   .to('.menu-btn__burger', { borderColor: '#fff' }, '<')
   .to(
     '.menu-btn__burger .line-under',
-    { rotate: -45, y: -2.5, duration: 0.5, backgroundColor: '#fff' },
+    { rotate: -45, y: -3.5, duration: 0.5, backgroundColor: '#fff' },
     '<',
   )
   .to(
     '.menu-btn__burger .line-over',
-    { y: 2.5, rotate: 45, duration: 0.5, backgroundColor: '#fff' },
+    { rotate: 45, y: 3.5, duration: 0.5, backgroundColor: '#fff' },
     '<',
   )
   .to('.menu__bg', { backdropFilter: 'blur(12px)', duration: 0.3 }, '<')

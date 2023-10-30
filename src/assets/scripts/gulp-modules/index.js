@@ -16,6 +16,22 @@ const swiper = new Swiper('.swiper', {
   autoplay: 1000,
   spaceBetween: 50,
   slidesPerView: 1.9,
+  breakpoints: {
+    // when window width is >= 320px
+    360: {
+      slidesPerView: 1.1,
+      spaceBetween: 8,
+    },
+    // when window width is >= 480px
+    768: {
+      slidesPerView: 1.3,
+      spaceBetween: 20,
+    },
+    1366: {
+      spaceBetween: 50,
+      slidesPerView: 1.9,
+    },
+  },
   navigation: {
     prevEl: '.swiper-button-prev',
     nextEl: '.swiper-button-next',
@@ -25,7 +41,22 @@ const swiper = new Swiper('.swiper', {
 const swiperProgress = new Swiper('.swiper-progress', {
   modules: [Navigation],
   speed: 1000,
-
+  breakpoints: {
+    // when window width is >= 320px
+    360: {
+      slidesPerView: 1.1,
+      spaceBetween: 8,
+    },
+    // when window width is >= 480px
+    768: {
+      slidesPerView: 1.3,
+      spaceBetween: 20,
+    },
+    1366: {
+      spaceBetween: 50,
+      slidesPerView: 2.2,
+    },
+  },
   spaceBetween: 50,
   slidesPerView: 2.2,
   navigation: {

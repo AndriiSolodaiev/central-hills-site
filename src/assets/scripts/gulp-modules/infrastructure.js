@@ -11,10 +11,11 @@ gsap.registerPlugin(ScrollTrigger, CustomEase);
 
 const swiperLuxary = new Swiper('.swiper-luxary', {
   modules: [Navigation, EffectFade, Autoplay],
-  speed: 2000,
+  speed: 1000,
   effect: 'fade',
+
   autoplay: {
-    delay: 1500,
+    delay: 2000,
   },
   spaceBetween: 50,
   on: {
@@ -22,10 +23,10 @@ const swiperLuxary = new Swiper('.swiper-luxary', {
       gsap
         .timeline()
         .from('.bg-img__title', {
-          delay: 0.5,
+          delay: 0.7,
           yPercent: -100,
           opacity: 0,
-          duration: 0.7,
+          duration: 0.5,
         })
         .from(
           '.bg-img__text',
@@ -34,7 +35,7 @@ const swiperLuxary = new Swiper('.swiper-luxary', {
             opacity: 0,
             duration: 0.5,
           },
-          '<0.2',
+          '<',
         );
     },
   },

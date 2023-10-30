@@ -1,6 +1,11 @@
 .footer {
-  padding-top: 150px;
+  padding-top: 60px;
   background-color: $color-grey;
+  @include tablet {
+  }
+  @include laptop {
+    padding-top: 150px;
+  }
 
   .home-sensation__title {
     color: $color-white;
@@ -8,8 +13,9 @@
 
   .home-sensation__descr {
     color: $color-white;
-    margin-bottom: 100px;
-
+    margin-bottom: 32px;
+    @include tablet {
+    }
     @include laptop {
       margin-bottom: 150px;
     }
@@ -22,28 +28,54 @@
 
 .footer-contacts__container {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 150px;
+  flex-direction: column;
+
+  @include tablet {
+  }
+  @include laptop {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 150px;
+  }
 }
 
 .footer__address-block {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  border-top: 1px solid #33413d;
+  border-bottom: 1px solid #33413d;
   .address__link {
     max-width: 335px;
     display: block;
+  }
+  @include tablet {
+  }
+  @include laptop {
+    padding: 0;
+    border: none;
   }
 }
 
 .address__title {
   @include text-style-accent;
   color: $color-white;
-  margin-bottom: 40px;
+  margin-bottom: 12px;
+  @include tablet {
+  }
+  @include laptop {
+    margin-bottom: 40px;
+  }
 }
 
 .address__link {
   @include text-style-btn;
   color: $color-white;
-  margin-bottom: 20px;
-
+  margin-bottom: 12px;
+  @include tablet {
+  }
+  @include laptop {
+    margin-bottom: 20px;
+  }
   &:last-child {
     margin-bottom: 0;
   }
@@ -52,18 +84,46 @@
 .footer__contacts-block {
   display: flex;
   flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 32px;
 
+  @include tablet {
+  }
+  @include laptop {
+    padding: 0;
+  }
   .address__link {
     margin-bottom: 10px;
+  }
+  .contacts__wrap {
+    display: flex;
+    justify-content: space-between;
+    @include laptop {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
   }
 }
 
 .footer__socials-block {
-  display: flex;
-  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  border-top: 1px solid #33413d;
+  border-bottom: 1px solid #33413d;
+
+  @include tablet {
+  }
+  @include laptop {
+    padding: 0;
+    border: none;
+  }
 }
 
 .social__list {
+  display: flex;
+  @include laptop {
+    flex-direction: column;
+  }
   li {
     display: flex;
     align-items: center;
@@ -93,11 +153,17 @@
   .general-btn {
     border: 1px solid $color-white;
     background-color: transparent;
-    width: fit-content;
+    width: 100%;
+    justify-content: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    @include laptop {
+      width: fit-content;
+      margin: 0;
+    }
 
-    @include laptop {}
-
-    @include desktop {}
+    @include desktop {
+    }
   }
 }
 
@@ -105,16 +171,28 @@
   @extend .address__title;
   display: flex;
   align-items: center;
-
-  padding-bottom: 10px;
-  border-bottom: 1px solid $color-white;
-  margin-bottom: 40px;
+  justify-content: center;
   border-radius: 0;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  border-bottom: 1px solid #33413d;
+
+  @include tablet {
+  }
+  @include laptop {
+    padding: 0;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid $color-white;
+    margin-bottom: 40px;
+    justify-content: flex-start;
+  }
 
   svg {
     width: 32px;
     height: 32px;
-    margin-left: 50px;
+    margin-left: 20px;
 
     @include laptop {
       width: 32px;
@@ -125,31 +203,48 @@
     @include desktop {
       margin-left: 50px;
     }
-
   }
-
-  @include laptop {}
-
-  @include desktop {}
 }
 
 .footer__bottom-block {
   display: flex;
   justify-content: space-between;
-}
+  padding-top: 32px;
 
+  border-top: 1px solid #33413d;
+
+  @include tablet {
+  }
+  @include laptop {
+    padding-top: 0;
+    border: none;
+  }
+}
+.footer__bottom-text-wraper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  @include tablet {
+  }
+  @include laptop {
+    width: 75%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  @include desktop {
+    width: 70%;
+  }
+}
 .footer__license {
   @include text-style-minor;
   color: $color-white;
   opacity: 0.5;
-  max-width: 30%;
-  text-align: center;
 
   @include laptop {
     max-width: 657px;
+    text-align: center;
   }
-
-
 }
 
 .grupasmart {
