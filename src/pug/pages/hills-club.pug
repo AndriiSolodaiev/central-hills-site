@@ -38,7 +38,7 @@ block content
         h2.home-safe__title Енергія життя: спортовий пульс та динаміка руху
         .home-safe__descr-wrap 
           p.home-safe__descr Central Hills пропонує повний спектр спортивних розваг: фітнес-клуб, басейн, тенісний корт та футбольне поле. Ваш активний спосіб життя починається тут.
-
+    .container--mobile
       .swiper-luxary
         .swiper-wrapper 
           .swiper-slide 
@@ -86,8 +86,10 @@ block content
       p.home-sensation__descr Відчуйте смак життя у власному фруктовому саду
       .home-quality__descr-wrap
         p Відкритий, але захищений  — це місце, де можна насолодитися склянкою шампанського та неймовірними видами. 
+        .bg-parallax-wrap.img-in-text--mobile
+          img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
         p Стильний і розслабляючий, це ще один сучасний зелений простір у  житловому комплексі Central Hills.
-      .bg-parallax-wrap
+      .bg-parallax-wrap.img-after-text--tablet
         img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
 block footer
   include ../includes/footer.pug

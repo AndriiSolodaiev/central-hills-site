@@ -1,7 +1,6 @@
 .location-harmony {
   background-color: $color-grey;
 
-
   .home-safe__title {
     color: $color-white;
   }
@@ -13,8 +12,12 @@
   }
 
   .location__harmony-container {
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    @include laptop {
+      padding-top: 150px;
+      padding-bottom: 150px;
+    }
   }
 }
 

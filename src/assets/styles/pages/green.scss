@@ -1,13 +1,14 @@
 .green-park {
   .bg-parallax-wrap {
     height: 50vh;
-
   }
 }
 
 .green-garden {
   .bg-parallax-wrap {
-    height: 100vh;
-
+    height: 60vh;
+    @include laptop {
+      height: 100vh;
+    }
   }
 }
