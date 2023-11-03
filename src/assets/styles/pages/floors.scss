@@ -1,0 +1,12 @@
+.floors {
+  @include tablet {
+    .bg-parallax-wrap {
+      height: 55vh;
+    }
+  }
+  @include laptop {
+    .bg-parallax-wrap {
+      height: calc((100vw - 60px) * 0.43);
+    }
+  }
+}

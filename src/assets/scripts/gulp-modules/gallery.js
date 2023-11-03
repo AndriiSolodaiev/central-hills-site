@@ -13,7 +13,21 @@ const swiper = new Swiper('.swiper-gallery', {
 
   autoplay: 1000,
   spaceBetween: 50,
-  slidesPerView: 1.2,
+  breakpoints: {
+    // when window width is >= 320px
+    360: {
+      slidesPerView: 1.1,
+      spaceBetween: 8,
+    },
+    // when window width is >= 480px
+    768: {
+      spaceBetween: 16,
+    },
+    1366: {
+      spaceBetween: 50,
+      slidesPerView: 1.25,
+    },
+  },
   navigation: {
     prevEl: '.swiper-button-prev',
     nextEl: '.swiper-button-next',

@@ -1,6 +1,7 @@
 .section {
   margin-bottom: 60px;
   @include tablet {
+    margin-bottom: 100px;
   }
 
   @include laptop {
@@ -18,10 +19,6 @@
     padding-top: 180px;
   }
 
-  @include laptop {
-    padding-top: 180px;
-  }
-
   @include desktop {
     padding-top: 206px;
   }
@@ -35,13 +32,7 @@
   align-items: center;
   margin-bottom: 24px;
   @include tablet {
-  }
-
-  @include laptop {
     margin-bottom: 50px;
-  }
-
-  @include desktop {
   }
 }
 
@@ -84,15 +75,18 @@
   justify-content: center;
 
   p {
-    max-width: 80%;
     text-align: center;
   }
   @include tablet {
-    margin-bottom: 46px;
+    margin-bottom: 50px;
   }
 
   @include laptop {
     margin-bottom: 46px;
+    p {
+      max-width: 80%;
+      text-align: center;
+    }
   }
 
   @include desktop {
@@ -106,6 +100,7 @@
 
   @include tablet {
     margin-bottom: 46px;
+    height: calc((100vw - 48px) * 0.6);
   }
 
   @include laptop {
@@ -145,13 +140,10 @@
   color: $color-grey;
   max-width: 90%;
   @include tablet {
+    max-width: 42%;
   }
-
   @include laptop {
     max-width: 45%;
-  }
-
-  @include desktop {
   }
 }
 
@@ -161,6 +153,8 @@
   gap: 16px;
 
   @include tablet {
+    max-width: 43%;
+    gap: 20px;
   }
 
   @include laptop {
@@ -192,6 +186,9 @@
 .home-safe {
   .bg-parallax-wrap {
     height: 100vh;
+    @include tablet {
+      height: 80vh;
+    }
   }
 }
 
@@ -201,6 +198,7 @@
   margin-bottom: 16px;
 
   @include tablet {
+    margin-bottom: 30px;
   }
 
   @include laptop {
@@ -218,6 +216,7 @@
   margin-bottom: 24px;
   max-width: 100%;
   @include tablet {
+    margin-bottom: 50px;
   }
 
   @include laptop {
@@ -246,9 +245,15 @@
   overflow: hidden;
 
   @include tablet {
+    height: 41vh;
   }
 
   @include laptop {
+    &:hover {
+      .img-container__mask {
+        transform: translateY(0%);
+      }
+    }
     width: calc(50vw - 25px);
     height: calc(50vw - 25px);
   }
@@ -279,10 +284,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to top, #000000, #2e2e2e56);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 100%);
   padding: 16px;
   display: flex;
   align-items: flex-end;
+
   .home-safe__descr {
     color: $color-white;
   }
@@ -291,6 +297,18 @@
     color: $color-white;
     border: 1px solid $color-white;
     background-color: transparent;
+  }
+  @include tablet {
+    padding: 24px;
+    .home-safe__descr-wrap {
+      max-width: 100%;
+    }
+  }
+
+  @include laptop {
+    padding: 50px;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
   }
 }
 
@@ -336,6 +354,7 @@
     height: 100%;
   }
   @include tablet {
+    height: 40vh;
   }
 
   @include laptop {
@@ -422,7 +441,6 @@
   width: 100%;
 
   @include tablet {
-    height: 320px;
   }
   @include laptop {
     height: 320px;
@@ -458,7 +476,7 @@
   justify-content: space-between;
   background-color: $color-grey;
   padding: 24px 16px;
-  max-width: 600px;
+  max-width: 100%;
   height: 100%;
   box-sizing: border-box;
 
@@ -471,7 +489,9 @@
     border: 1px solid $color-white;
     background-color: transparent;
   }
-
+  @include tablet {
+    padding: 48px 24px;
+  }
   @include laptop {
     max-width: 388px;
     padding: 50px;
@@ -487,9 +507,6 @@
     position: relative;
     margin-bottom: 24px;
     @include tablet {
-    }
-
-    @include laptop {
       margin-bottom: 100px;
     }
 
@@ -499,9 +516,9 @@
         display: block;
         position: absolute;
         top: 50%;
-        left: 15%;
-        width: 885px;
-        height: 308px;
+        left: 5%;
+        width: 444px;
+        height: 155px;
       }
 
       @include laptop {
@@ -521,6 +538,10 @@
 
     .icon--lev-logo {
       width: 100%;
+      @include tablet {
+        width: 122px;
+        height: 42.456px;
+      }
       @include laptop {
         width: 250px;
         height: 87px;
@@ -536,20 +557,27 @@
 
   gap: 16px;
   @include tablet {
-  }
-
-  @include laptop {
-    gap: 50px;
     justify-content: flex-end;
     flex-direction: row;
   }
 
-  @include desktop {
+  @include laptop {
+    gap: 50px;
   }
+
   p {
     @include text-style-txt;
-    max-width: 547px;
+
     color: $color-grey;
+    @include tablet {
+      max-width: 43%;
+    }
+    @include laptop {
+      max-width: 394px;
+    }
+    @include desktop {
+      max-width: 547px;
+    }
   }
 }
 
@@ -559,51 +587,71 @@
 .swiper-luxary {
   .bg-parallax-wrap {
     height: 80vh;
+
+    @include tablet {
+      height: calc((100vw - 48px) * 0.5);
+    }
+    @include laptop {
+      height: calc((100vw - 60px) * 0.4);
+    }
   }
 }
+
+.swiper-progress {
+  .swiper-slide {
+    img {
+      width: 100%;
+      height: calc((100vw - 32px - 4px) * 0.7);
+      margin-bottom: 20px;
+      @include tablet {
+        height: calc((100vw - 48px - 8px) / 1.6 * 0.7);
+      }
+
+      @include laptop {
+        height: calc((100vw - 60px - 100px) / 2.2 * 0.55);
+      }
+    }
+    @include tablet {
+      &:nth-child(2n) {
+        img {
+          height: calc((100vw - 48px - 8px) / 1.6 * 0.6);
+        }
+      }
+    }
+    @include laptop {
+      &:nth-child(2n) {
+        img {
+          height: calc((100vw - 60px - 50px) / 2 * 0.5);
+        }
+      }
+    }
+  }
+}
+
+.progress-card__descr-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @include laptop {
+    flex-direction: row;
+    gap: 161px;
+  }
+
+  @include desktop {
+  }
+}
+
 .progress-card {
   width: 100%;
-
-  img {
-    width: 100%;
-    height: calc((100vw - 32px - 4px) * 0.7);
-    margin-bottom: 20px;
-    @include tablet {
-    }
-
-    @include laptop {
-      height: calc((100vw - 60px - 100px) / 2.2 * 0.55);
-    }
-
-    @include desktop {
-    }
+}
+.progress-card__date {
+  @include text-style-date;
+  order: -1;
+  @include laptop {
+    order: 1;
   }
-
-  .progress-card__descr-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    @include tablet {
-    }
-
-    @include laptop {
-      flex-direction: row;
-      gap: 161px;
-    }
-
-    @include desktop {
-    }
-  }
-
-  .progress-card__title {
-    @include text-style-txt;
-  }
-
-  .progress-card__date {
-    @include text-style-date;
-    order: -1;
-    @include tablet {
-      order: 1;
-    }
-  }
+}
+.progress-card__title {
+  @include text-style-txt;
 }

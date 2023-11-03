@@ -49,8 +49,8 @@ const swiperProgress = new Swiper('.swiper-progress', {
     },
     // when window width is >= 480px
     768: {
-      slidesPerView: 1.3,
-      spaceBetween: 20,
+      slidesPerView: 1.6,
+      spaceBetween: 16,
     },
     1366: {
       spaceBetween: 50,

@@ -1,9 +1,19 @@
 .gallery__filter-btn-list {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 50px;
-  margin-bottom: 50px;
+  gap: 8px;
+  margin-bottom: 32px;
+  @include tablet {
+    gap: 24px;
+    margin-bottom: 50px;
+  }
+  @include laptop {
+    gap: 50px;
+  }
+  @include desktop {
+  }
 }
 
 .gallery__filter-btn {
@@ -21,15 +31,26 @@
 
 .swiper-gallery {
   position: relative;
+  img {
+    height: 70vh;
+    @include tablet {
+      height: 50vh;
+    }
+    @include laptop {
+      height: calc((100vw - 60px) / 1.25 * 0.5);
+    }
+    @include desktop {
+    }
+  }
 }
 
 .swiper-gallery .swiper-button-prev {
   position: absolute;
-  left: 90px;
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
-  width: 100px;
-  height: 100px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background-color: $accent-color;
   display: flex;
@@ -38,24 +59,37 @@
   cursor: pointer;
   z-index: 2;
   transition: opacity 0.3s ease-in-out;
-
-
   svg {
-
-    transform: scale(0.7) rotate(180deg);
+    transform: scale(0.4) rotate(180deg);
   }
-
+  @include tablet {
+    left: 56px;
+    width: 64px;
+    height: 64px;
+    svg {
+      transform: scale(0.6) rotate(180deg);
+    }
+  }
+  @include laptop {
+    left: 78px;
+  }
+  @include desktop {
+    left: 90px;
+    width: 100px;
+    height: 100px;
+    svg {
+      transform: scale(0.7) rotate(180deg);
+    }
+  }
 }
-
-
 
 .swiper-gallery .swiper-button-next {
   position: absolute;
-  right: 90px;
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
-  width: 100px;
-  height: 100px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background-color: $accent-color;
   display: flex;
@@ -64,17 +98,31 @@
   cursor: pointer;
   z-index: 2;
   transition: opacity 0.3s ease-in-out;
-
-
   svg {
-    transform: scale(0.7);
+    transform: scale(0.4);
   }
-
+  @include tablet {
+    right: 56px;
+    width: 64px;
+    height: 64px;
+    svg {
+      transform: scale(0.6);
+    }
+  }
+  @include laptop {
+    right: 78px;
+  }
+  @include desktop {
+    right: 90px;
+    width: 100px;
+    height: 100px;
+    svg {
+      transform: scale(0.7);
+    }
+  }
 }
 
-.swiper-gallery>.swiper-button-disabled {
-
+.swiper-gallery > .swiper-button-disabled {
   pointer-events: none;
   opacity: 0;
-
 }

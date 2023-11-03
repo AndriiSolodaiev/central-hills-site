@@ -1,25 +1,46 @@
 .progress__container {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 16px;
+  @include laptop {
+    gap: 50px;
+  }
 }
 
 .progress-card {
+  @include tablet {
+    width: calc((100% - 16px) / 2);
+    .progrss-img-wrap {
+      height: calc((100vw - 48px - 16px) / 2 * 1.2);
+    }
+    &:nth-child(4n - 2),
+    &:nth-child(4n - 1) {
+      .progrss-img-wrap {
+        height: calc((100vw - 48px - 16px) / 2 * 0.9);
+      }
+    }
+  }
   @include laptop {
     width: calc((100% - 50px) / 2);
+    .progrss-img-wrap {
+      height: calc((100vw - 60px - 50px) / 2 * 0.85);
+    }
+    &:nth-child(4n - 2),
+    &:nth-child(4n - 1) {
+      .progrss-img-wrap {
+        height: calc((100vw - 60px - 50px) / 2 * 0.7);
+      }
+    }
   }
-
-  // &:nth-child(n + 2) {
-  //   height: calc((100vw - 60px - 50px) / 2 * 0.7);
-  // }
 }
 
 .progrss-img-wrap {
   width: 100%;
   height: calc((100vw - 60px - 50px) * 0.85);
-  margin-bottom: 20px;
-  @include laptop {
+  margin-bottom: 8px;
+  @include tablet {
     height: calc((100vw - 60px - 50px) / 2 * 0.85);
+    margin-bottom: 20px;
   }
   img {
     object-fit: cover;

@@ -2,8 +2,26 @@
   .home-quality__descr-wrap {
     margin-bottom: 50px;
   }
+  .bg-parallax-wrap {
+    @include tablet {
+      height: 25vh;
+    }
+    @include laptop {
+      height: calc((100vw - 60px) * 0.25);
+    }
+  }
 }
 
 .safe-area {
-  height: 75vh
+  height: 75vh;
+}
+.safe-room {
+  .bg-parallax-wrap {
+    @include tablet {
+      height: 35vh;
+    }
+    @include laptop {
+      height: 80vh;
+    }
+  }
 }

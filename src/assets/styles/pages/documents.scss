@@ -29,16 +29,18 @@
 .documents__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 16px;
 
   li {
     width: 100%;
-
+    overflow: hidden;
+    border-radius: 12px;
     @include tablet {
     }
     @include laptop {
       width: calc(50% - 25px);
       flex-grow: 1;
+      gap: 50px;
     }
     @include desktop {
     }

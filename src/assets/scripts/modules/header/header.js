@@ -58,8 +58,11 @@ tl.add(() => {
 
   .to(headerBg, { backgroundColor: 'transparent', duration: 0.1 }, '<')
   .to('.language__item', { color: '#fff' }, '<')
-  .to('.call-us__btn', { opacity: 0, pointerEvents: 'none', duration: 0.3 }, '<')
+  .to(' .header .call-us__btn', { borderColor: '#fff', color: '#fff' }, '<')
+  .to('.call-us__btn .mode--mobile path', { stroke: '#fff' }, '<')
   .to('.header .general-btn', { backgroundColor: '#fff', color: '#2A4635' }, '<')
+  .to('.general-btn .mode--mobile path', { stroke: '#2a4635' }, '<')
+  .to('.header__logo svg path', { fill: '#fff' }, '<')
   .to('.menu-btn__burger', { borderColor: '#fff' }, '<')
   .to(
     '.menu-btn__burger .line-under',
@@ -91,6 +94,11 @@ tl.reverse();
 
 openMenuBtn.addEventListener('click', () => {
   tl.reversed(!tl.reversed());
+});
+//SubMenu
+const subNavBtn = document.querySelector('.sub-nav');
+subNavBtn.addEventListener('click', () => {
+  subNavBtn.classList.toggle('show-sub');
 });
 
 //Footer

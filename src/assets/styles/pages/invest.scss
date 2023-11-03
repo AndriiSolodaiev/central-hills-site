@@ -1,10 +1,19 @@
 .invest-graph {
   background-color: $color-grey;
-  padding-top: 150px;
-  padding-bottom: 150px;
-
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include tablet {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  @include laptop {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
   .graph {
-    height: 30vw;
+    height: 60vw;
+    width: 120vw;
+    transform: translateX(-15%);
 
     .c3-line-profit {
       stroke: #c6a682 !important;
@@ -14,12 +23,27 @@
     .c3-axis-y text,
     .c3-axis-x text {
       fill: $color-white;
-      font-size: 18px;
+      font-size: 8px;
       font-family: $default-font;
     }
 
     .domain {
       stroke: $color-white;
+    }
+    @include tablet {
+      .c3-axis-y text,
+      .c3-axis-x text {
+        font-size: 16px;
+      }
+      width: 100%;
+      transform: translateX(0%);
+    }
+    @include laptop {
+      height: 30vw;
+      .c3-axis-y text,
+      .c3-axis-x text {
+        font-size: 18px;
+      }
     }
   }
 }

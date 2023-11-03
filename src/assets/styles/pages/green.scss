@@ -5,10 +5,15 @@
 }
 
 .green-garden {
-  .bg-parallax-wrap {
-    height: 60vh;
-    @include laptop {
-      height: 100vh;
+  .green-garden__container {
+    .bg-parallax-wrap {
+      height: 60vh;
+      @include tablet {
+        height: 60vh;
+      }
+      @include laptop {
+        height: 100vh;
+      }
     }
   }
 }

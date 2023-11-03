@@ -1,5 +1,4 @@
 .infrastructure-spa {
-
   .home-sensation__title,
   .home-sensation__descr {
     color: $color-white;
@@ -9,5 +8,11 @@
 .infrastructure-cinema {
   .bg-parallax-wrap {
     height: 75vh;
+    @include tablet {
+      height: 30vh;
+    }
+    @include laptop {
+      height: calc((100vw - 60px) * 0.4);
+    }
   }
 }

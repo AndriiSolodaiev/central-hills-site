@@ -14,8 +14,8 @@ const chart = c3.generate({
     y: 'y',
 
     columns: [
-      ['x', '2018-01-01', '2019-01-01', '2020-01-01', '2021-01-01', '2022-01-01', '2023-01-01'],
-      ['profit', 0, 1000, 2550, 2550, 4000, 5500],
+      ['x', '2022-01-01', '2023-01-01', '2024-04-01', '2024-10-01', '2025-01-01'],
+      ['profit', 1000, 1330, 1650, 2145, 2500],
     ],
     types: {
       profit: 'area-spline',
@@ -24,6 +24,14 @@ const chart = c3.generate({
   legend: {
     show: false,
   },
+  // breakpoints: {
+  //   360: {
+  //     padding: {
+  //       left: 50,
+  //       right: 20,
+  //     },
+  //   },
+  // },
   padding: {
     left: 100,
     right: 50,
@@ -33,7 +41,7 @@ const chart = c3.generate({
       type: 'timeseries',
       tick: {
         format: function(x) {
-          return x.getFullYear();
+          return `${Math.ceil((x.getMonth() + 1) / 3)} кв. ${x.getFullYear()}`;
         },
 
         // values: ['2013-01-05', '2013-01-10'],
@@ -44,7 +52,7 @@ const chart = c3.generate({
         format: function(d) {
           return '$' + d + '/m2';
         },
-        values: ['1000', '2000', '3000', '4000', '5000', '6000'],
+        values: ['0', '1000', '1500', '2000', '2500', '3000'],
       },
     },
   },
