@@ -1,5 +1,7 @@
 .section {
+
   margin-bottom: 60px;
+
   @include tablet {
     margin-bottom: 100px;
   }
@@ -8,8 +10,7 @@
     margin-bottom: 150px;
   }
 
-  @include desktop {
-  }
+  @include desktop {}
 }
 
 .home-hero {
@@ -31,6 +32,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 24px;
+
   @include tablet {
     margin-bottom: 50px;
   }
@@ -77,20 +79,21 @@
   p {
     text-align: center;
   }
+
   @include tablet {
     margin-bottom: 50px;
   }
 
   @include laptop {
     margin-bottom: 46px;
+
     p {
       max-width: 80%;
       text-align: center;
     }
   }
 
-  @include desktop {
-  }
+  @include desktop {}
 }
 
 .bg-parallax-wrap {
@@ -107,8 +110,8 @@
     height: calc((100vw - 60px) * 0.43);
   }
 
-  @include desktop {
-  }
+  @include desktop {}
+
   img {
     object-fit: cover;
     height: 100%;
@@ -121,6 +124,7 @@
   gap: 24px;
   width: 100%;
   margin-bottom: 32px;
+
   @include tablet {
     margin-bottom: 46px;
     justify-content: space-between;
@@ -131,17 +135,18 @@
     margin-bottom: 50px;
   }
 
-  @include desktop {
-  }
+  @include desktop {}
 }
 
 .home-safe__title {
   @include section-title;
   color: $color-grey;
   max-width: 90%;
+
   @include tablet {
     max-width: 42%;
   }
+
   @include laptop {
     max-width: 45%;
   }
@@ -162,8 +167,7 @@
     gap: 40px;
   }
 
-  @include desktop {
-  }
+  @include desktop {}
 
   .home-safe__descr {
     @include text-style-txt;
@@ -186,6 +190,7 @@
 .home-safe {
   .bg-parallax-wrap {
     height: 100vh;
+
     @include tablet {
       height: 80vh;
     }
@@ -215,6 +220,7 @@
   color: $color-grey;
   margin-bottom: 24px;
   max-width: 100%;
+
   @include tablet {
     margin-bottom: 50px;
   }
@@ -229,8 +235,8 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  @include tablet {
-  }
+
+  @include tablet {}
 
   @include laptop {
     flex-direction: row;
@@ -254,9 +260,11 @@
         transform: translateY(0%);
       }
     }
+
     width: calc(50vw - 25px);
     height: calc(50vw - 25px);
   }
+
   img {
     object-fit: cover;
     height: 100%;
@@ -269,6 +277,7 @@
     top: 0;
     left: 0;
     padding: 16px;
+
     @include tablet {
       padding: 24px;
     }
@@ -278,6 +287,7 @@
     }
   }
 }
+
 .img-container__mask {
   position: absolute;
   top: 0;
@@ -298,8 +308,10 @@
     border: 1px solid $color-white;
     background-color: transparent;
   }
+
   @include tablet {
     padding: 24px;
+
     .home-safe__descr-wrap {
       max-width: 100%;
     }
@@ -353,6 +365,7 @@
     object-fit: cover;
     height: 100%;
   }
+
   @include tablet {
     height: 40vh;
   }
@@ -366,12 +379,13 @@
   position: relative;
   width: 100%;
   height: 80vh;
-  @include tablet {
-  }
+
+  @include tablet {}
 
   @include laptop {
     height: 100vh;
   }
+
   .home-sensation__title {
     color: $color-white;
   }
@@ -402,6 +416,7 @@
   padding: 18px;
   display: flex;
   flex-direction: column;
+
   @include tablet {
     padding: 24px;
   }
@@ -440,8 +455,8 @@
   flex-direction: column;
   width: 100%;
 
-  @include tablet {
-  }
+  @include tablet {}
+
   @include laptop {
     height: 320px;
     flex-direction: row;
@@ -461,13 +476,13 @@
     height: 100%;
     width: 100%;
   }
+
   @include laptop {
     height: auto;
     flex: 1;
   }
 
-  @include desktop {
-  }
+  @include desktop {}
 }
 
 .home-invest__descr-wrap {
@@ -489,9 +504,11 @@
     border: 1px solid $color-white;
     background-color: transparent;
   }
+
   @include tablet {
     padding: 48px 24px;
   }
+
   @include laptop {
     max-width: 388px;
     padding: 50px;
@@ -506,12 +523,14 @@
   .home-safe__text-block-wrap {
     position: relative;
     margin-bottom: 24px;
+
     @include tablet {
       margin-bottom: 100px;
     }
 
     .icon--lev-bg {
       display: none;
+
       @include tablet {
         display: block;
         position: absolute;
@@ -538,10 +557,12 @@
 
     .icon--lev-logo {
       width: 100%;
+
       @include tablet {
         width: 122px;
         height: 42.456px;
       }
+
       @include laptop {
         width: 250px;
         height: 87px;
@@ -556,6 +577,7 @@
   width: 100%;
 
   gap: 16px;
+
   @include tablet {
     justify-content: flex-end;
     flex-direction: row;
@@ -569,12 +591,15 @@
     @include text-style-txt;
 
     color: $color-grey;
+
     @include tablet {
       max-width: 43%;
     }
+
     @include laptop {
       max-width: 394px;
     }
+
     @include desktop {
       max-width: 547px;
     }
@@ -584,6 +609,7 @@
 .home-nature {
   height: 75vh;
 }
+
 .swiper-luxary {
   .bg-parallax-wrap {
     height: 80vh;
@@ -591,6 +617,7 @@
     @include tablet {
       height: calc((100vw - 48px) * 0.5);
     }
+
     @include laptop {
       height: calc((100vw - 60px) * 0.4);
     }
@@ -603,6 +630,7 @@
       width: 100%;
       height: calc((100vw - 32px - 4px) * 0.7);
       margin-bottom: 20px;
+
       @include tablet {
         height: calc((100vw - 48px - 8px) / 1.6 * 0.7);
       }
@@ -611,19 +639,21 @@
         height: calc((100vw - 60px - 100px) / 2.2 * 0.55);
       }
     }
+
     @include tablet {
-      &:nth-child(2n) {
-        img {
-          height: calc((100vw - 48px - 8px) / 1.6 * 0.6);
-        }
-      }
+      // &:nth-child(2n) {
+      //   img {
+      //     height: calc((100vw - 48px - 8px) / 1.6 * 0.6);
+      // }
+      // }
     }
+
     @include laptop {
-      &:nth-child(2n) {
-        img {
-          height: calc((100vw - 60px - 50px) / 2 * 0.5);
-        }
-      }
+      // &:nth-child(2n) {
+      //   img {
+      //     height: calc((100vw - 60px - 50px) / 2 * 0.5);
+      //   }
+      // }
     }
   }
 }
@@ -638,20 +668,22 @@
     gap: 161px;
   }
 
-  @include desktop {
-  }
+  @include desktop {}
 }
 
 .progress-card {
   width: 100%;
 }
+
 .progress-card__date {
   @include text-style-date;
   order: -1;
+
   @include laptop {
     order: 1;
   }
 }
+
 .progress-card__title {
   @include text-style-txt;
 }

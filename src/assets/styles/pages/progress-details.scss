@@ -1,0 +1,280 @@
+.progress-details {
+  padding-top: 120px;
+
+  @include tablet {
+    padding-top: 180px;
+  }
+
+  @include desktop {
+    padding-top: 208px;
+  }
+}
+
+.progress-details__title {
+  position: relative;
+  padding-left: 20px;
+
+  @include tablet {
+    padding-left: 40px;
+  }
+}
+
+.btn-back__wrap {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  p {
+    display: none;
+  }
+
+  @include tablet {
+    top: 10px;
+    left: 0px;
+
+    p {
+      @include text-style-txt;
+      display: block;
+
+    }
+  }
+
+  @include laptop {
+    gap: 20px;
+    top: 20px;
+    left: 40px;
+  }
+
+  @include desktop {}
+}
+
+.btn-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid $color-grey;
+
+
+  svg {
+    transform: scale(0.5);
+  }
+
+
+
+  @include laptop {
+    width: 44px;
+    height: 44px;
+
+    svg {
+      transform: scale(0.7);
+    }
+  }
+
+  @include desktop {
+    width: 80px;
+    height: 80px;
+
+    svg {
+      transform: scale(1);
+    }
+  }
+}
+
+.progress-details__primary-block {
+  @include section-title;
+  margin-bottom: 32px;
+  color: $color-grey;
+
+
+  @include tablet {
+    margin-bottom: 50px;
+  }
+
+  @include laptop {
+    margin-bottom: 100px;
+  }
+}
+
+.secondory-block-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+
+  p {
+    @include text-style-txt;
+    color: $color-grey;
+
+    @include tablet {
+      max-width: 80%;
+    }
+
+    @include laptop {
+      max-width: 60%;
+    }
+  }
+}
+
+.video-section__title {
+  @include section-descr;
+  color: $color-white;
+  margin-bottom: 50px;
+
+
+}
+
+.progress-details__video-section {
+  background-color: $color-grey;
+  padding: 60px 0;
+
+}
+
+.progress-details__list {
+  list-style-type: decimal;
+  padding-left: 16px;
+
+  @include tablet {
+    padding-left: 20%;
+  }
+
+  @include laptop {
+    padding-left: 40%;
+  }
+
+  li {
+    @include text-style-txt;
+    margin-bottom: 16px;
+  }
+
+
+  li:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+.progress-details__last-container {
+  h2 {
+
+    @extend .progress-details__primary-block
+  }
+}
+
+.swiper-progress-details {
+  position: relative;
+
+  img {
+    height: 70vh;
+
+    @include tablet {
+      height: 50vh;
+    }
+
+    @include laptop {
+      height: calc((100vw - 60px) / 1.25 * 0.5);
+    }
+
+    @include desktop {}
+  }
+}
+
+.swiper-progress-details .swiper-button-prev {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: $accent-color;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: opacity 0.3s ease-in-out;
+
+  svg {
+    transform: scale(0.4) rotate(180deg);
+  }
+
+  @include tablet {
+    left: 56px;
+    width: 64px;
+    height: 64px;
+
+    svg {
+      transform: scale(0.6) rotate(180deg);
+    }
+  }
+
+  @include laptop {
+    left: 78px;
+    display: flex;
+  }
+
+  @include desktop {
+    left: 90px;
+    width: 100px;
+    height: 100px;
+
+    svg {
+      transform: scale(0.7) rotate(180deg);
+    }
+  }
+}
+
+.swiper-progress-details .swiper-button-next {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: $accent-color;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: opacity 0.3s ease-in-out;
+
+  svg {
+    transform: scale(0.4);
+  }
+
+  @include tablet {
+    right: 56px;
+    width: 64px;
+    height: 64px;
+
+    svg {
+      transform: scale(0.6);
+    }
+  }
+
+  @include laptop {
+    right: 78px;
+    display: flex;
+  }
+
+  @include desktop {
+    right: 90px;
+    width: 100px;
+    height: 100px;
+
+    svg {
+      transform: scale(0.7);
+    }
+  }
+}
+
+.swiper-progress-details>.swiper-button-disabled {
+  pointer-events: none;
+  opacity: 0;
+}

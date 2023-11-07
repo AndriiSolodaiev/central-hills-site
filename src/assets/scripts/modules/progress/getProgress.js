@@ -23,7 +23,7 @@ export default async function getProgress(id, sections = []) {
   return axios.post('/wp-admin/admin-ajax.php', fd);
 }
 
-export function getProgressList({ year, month = 'all' }) {
+export function getProgressList() {
   if (document.documentElement.dataset.status === 'local') {
     return new Promise(function(resolve, reject) {
       setTimeout(function() {
@@ -63,8 +63,8 @@ export function getProgressList({ year, month = 'all' }) {
 
   const fd = new FormData();
   fd.append('action', 'constructionList');
-  fd.append('year', year);
-  fd.append('month', month);
+  // fd.append('year', year);
+  // fd.append('month', month);
 
   //  sections.forEach((el, index) => {
   //    fd.append(`sections[${index}]`, el);

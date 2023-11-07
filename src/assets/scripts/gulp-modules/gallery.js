@@ -3,11 +3,13 @@ import { Navigation } from 'swiper';
 import 'swiper/css';
 import { gsap, ScrollTrigger } from 'gsap/all';
 import { initSmoothScrolling } from '../modules/scroll/leniscroll';
+import { useState } from '../modules/helpers/helpers';
+import { getGalleryList } from '../modules/gallery/getGallerySlider';
 
 initSmoothScrolling();
 gsap.registerPlugin(ScrollTrigger);
-
-const swiper = new Swiper('.swiper-gallery', {
+const $container = document.querySelector('[data-gallery-slider]');
+const gallerySlider = new Swiper($container, {
   modules: [Navigation],
   speed: 1000,
 
@@ -33,13 +35,126 @@ const swiper = new Swiper('.swiper-gallery', {
     nextEl: '.swiper-button-next',
   },
 });
-const filterBtnArray = document.querySelectorAll('[data-gallery-fltr-btn]');
+const filterBtnArray = document.querySelectorAll('[data-gallery-id]');
 
-document.body.addEventListener('click', evt => {
-  const filterBtn = evt.target.closest('[data-gallery-fltr-btn]');
-  if (filterBtn) {
-    filterBtnArray.forEach(btn => btn.classList.remove('active'));
-    filterBtn.classList.add('active');
-    // filterBtn.dataset.galleryFltrBtn;
+const [pending, setPending, usePendingEffect] = useState(false);
+
+usePendingEffect(val => {
+  if (val) {
+    document.querySelector('.swiper-gallery').classList.add('pending');
+  } else {
+    document.querySelector('.swiper-gallery').classList.remove('pending');
   }
+});
+
+// const gallerySlider = new Swiper($container, {
+//   // loop: true,
+//   preloadImages: false,
+//   watchSlidesVisibility: true,
+//   prevNext: 2,
+//   slidesPerView: 'auto',
+//   lazy: {
+//     enabled: true,
+//     loadPrevNext: true,
+//     loadPrevNextAmount: 2,
+//     loadOnTransitionStart: false,
+//     threshold: 50,
+//   },
+//   // navigation: {
+//   //     nextEl: $container.querySelector('[class*="-next"'),
+//   //     prevEl: $container.querySelector('[class*="-prev"')
+//   // }
+// });
+
+const [gallerySliderState, setGallerySlider, useGallerySliderEffect] = useState({
+  title: '',
+  gallery: [],
+  img: '',
+});
+
+useGallerySliderEffect(state => {
+  console.log(state);
+  setPending(true);
+  $container.querySelector('.swiper-wrapper').innerHTML = state.gallery
+    .map(
+      el => `
+        <div class="swiper-slide" style="background-image: url(${el})">
+        <img src="${el}" class="swiper-lazy" loading="lazy">
+        </div>
+        `,
+    )
+    .join('');
+
+  gallerySlider.update();
+
+  setTimeout(() => {
+    setPending(false);
+  }, 1000);
+});
+
+const [galleryList, setgalleryList, useGalleryListEffect] = useState([]);
+
+getGalleryList().then(res => {
+  setgalleryList(res.data.gallery_list);
+
+  const data = res.data.gallery_list[0];
+  if (data && document.documentElement.classList.contains('mobile')) {
+    setGallerySlider({
+      // title: 'AAAAA',
+      gallery: [...data.gallery.map(el => (el.img_mob ? el.img_mob : el.img))],
+      // miniFlatImage: data.img,
+      type: data.type,
+      // type_gallery: data.type_gallery,
+    });
+    return;
+  }
+  if (data) {
+    setGallerySlider({
+      // title: 'AAAAA',
+      gallery: [...data.gallery.map(el => el.img)],
+      // miniFlatImage: data.img,
+      type: data.type,
+      // type_gallery: data.type_gallery,
+    });
+  }
+});
+
+document.querySelector('body').addEventListener('click', function(evt) {
+  const target = evt.target.closest('[data-gallery-id]');
+  if (!target) return;
+  const id = target.dataset.galleryId;
+  filterBtnArray.forEach(btn => btn.classList.remove('active'));
+  target.classList.add('active');
+  gallerySlider.slideTo(0);
+
+  const data = galleryList().find(el => el.type == id);
+
+  if (data && document.documentElement.classList.contains('mobile')) {
+    setGallerySlider({
+      title: 'AAAAA',
+      gallery: [...data.gallery.map(el => (el.img_mob ? el.img_mob : el.img))],
+      // miniFlatImage: data.img,
+      type: data.type,
+      // type_gallery: data.type_gallery,
+    });
+    return;
+  }
+
+  if (data) {
+    setGallerySlider({
+      title: 'AAAAA',
+      gallery: [...data.gallery.map(el => el.img)],
+      // miniFlatImage: data.img,
+      type: data.type,
+      // type_gallery: data.type_gallery,
+    });
+  }
+
+  // getGallerySlider(id)
+  //     .then(({ data }) => {
+  //         setGallerySlider({
+  //             ...data
+  //         })
+  //         console.log(res);
+  //     })
 });

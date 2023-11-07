@@ -66,12 +66,12 @@ tl.add(() => {
   .to('.menu-btn__burger', { borderColor: '#fff' }, '<')
   .to(
     '.menu-btn__burger .line-under',
-    { rotate: -45, y: -3.5, duration: 0.5, backgroundColor: '#fff' },
+    { rotate: -45, yPercent: -190, duration: 0.5, backgroundColor: '#fff' },
     '<',
   )
   .to(
     '.menu-btn__burger .line-over',
-    { rotate: 45, y: 3.5, duration: 0.5, backgroundColor: '#fff' },
+    { rotate: 45, yPercent: 190, duration: 0.5, backgroundColor: '#fff' },
     '<',
   )
   .to('.menu__bg', { backdropFilter: 'blur(12px)', duration: 0.3 }, '<')
@@ -87,7 +87,7 @@ tl.add(() => {
     '<',
   )
   .from('.menu__title-wrap', { opacity: 0, width: 0, duration: 0.7 }, '<')
-  .from('.nav__link', { yPercent: 100, duration: 0.5, rotateX: 90 }, '<0.2')
+  // .from('.nav__link', { yPercent: 100, duration: 0.5 }, '<0.2')
   .from('.header__contacts-container ', { xPercent: 100, opacity: 0, duration: 0.5 }, '<');
 
 tl.reverse();

@@ -5,15 +5,17 @@
   align-items: center;
   gap: 8px;
   margin-bottom: 32px;
+
   @include tablet {
     gap: 24px;
     margin-bottom: 50px;
   }
+
   @include laptop {
     gap: 50px;
   }
-  @include desktop {
-  }
+
+  @include desktop {}
 }
 
 .gallery__filter-btn {
@@ -31,15 +33,69 @@
 
 .swiper-gallery {
   position: relative;
+  overflow: hidden;
+
   img {
     height: 70vh;
+
     @include tablet {
       height: 50vh;
     }
+
     @include laptop {
       height: calc((100vw - 60px) / 1.25 * 0.5);
     }
-    @include desktop {
+
+    @include desktop {}
+  }
+
+  &.pending {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -30px;
+      margin-left: -30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+      border: 5px solid $color-white;
+      border-top-color: $color-grey;
+      animation: loading 2s linear infinite;
+      z-index: 40;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: $bg-color;
+      width: 100%;
+      height: 100%;
+      animation: fadeIn .25s ease-out;
+      z-index: 39;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes loading {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
   }
 }
@@ -59,24 +115,30 @@
   cursor: pointer;
   z-index: 2;
   transition: opacity 0.3s ease-in-out;
+
   svg {
     transform: scale(0.4) rotate(180deg);
   }
+
   @include tablet {
     left: 56px;
     width: 64px;
     height: 64px;
+
     svg {
       transform: scale(0.6) rotate(180deg);
     }
   }
+
   @include laptop {
     left: 78px;
   }
+
   @include desktop {
     left: 90px;
     width: 100px;
     height: 100px;
+
     svg {
       transform: scale(0.7) rotate(180deg);
     }
@@ -98,31 +160,37 @@
   cursor: pointer;
   z-index: 2;
   transition: opacity 0.3s ease-in-out;
+
   svg {
     transform: scale(0.4);
   }
+
   @include tablet {
     right: 56px;
     width: 64px;
     height: 64px;
+
     svg {
       transform: scale(0.6);
     }
   }
+
   @include laptop {
     right: 78px;
   }
+
   @include desktop {
     right: 90px;
     width: 100px;
     height: 100px;
+
     svg {
       transform: scale(0.7);
     }
   }
 }
 
-.swiper-gallery > .swiper-button-disabled {
+.swiper-gallery>.swiper-button-disabled {
   pointer-events: none;
   opacity: 0;
 }

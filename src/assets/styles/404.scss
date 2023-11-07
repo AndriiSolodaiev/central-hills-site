@@ -1,68 +1,106 @@
+.notFound {
+    @include laptop {
+
+        height: 100%
+    }
+}
+
 .notFound-bg {
-    background-image: url("../images/sectionsBg/section404.jpg");
+
     background-size: cover;
-    padding: 25vh 0px;
-    width: 100vw;
-    height: 100vh;
+    padding-top: 110px;
+    width: 100%;
 
-    @include tablet {}
 
-    @include laptop {}
+    @include tablet {
+        padding-top: 200px;
+    }
 
-    @include desktop {}
+    @include laptop {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        height: 100%;
+        padding-top: 60px;
+    }
+
+    @include desktop {
+        padding-top: 68px;
+    }
+}
+
+.notFound__text {
+    @include laptop {
+        align-self: center;
+    }
+
 }
 
 .notFound__title {
     width: 100%;
 
-    padding: 20px 10px;
-    margin-bottom: 40px;
+    // padding: 20px 10px;
+    margin-bottom: 24px;
+
+    @include tablet {
+        margin-bottom: 50px;
+    }
+
+    @include laptop {
+        justify-self: center;
+    }
 
     p {
         text-align: center;
+        font-size: 120px;
+        line-height: 100%;
+        font-weight: 700;
+        color: $color-white;
 
-        font-size: 100px;
-        line-height: 90%;
+        @include tablet {
+            font-size: 200px;
+        }
 
-        margin-bottom: 20px;
+        @include laptop {
+            font-size: 250px;
+        }
 
+        @include desktop {
+            font-size: 400px;
+        }
     }
 
     h1 {
-
-
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 100%;
         text-align: center;
-    }
+        color: $color-grey;
 
-    @include tablet {
-        border-width: 2px;
+        @include tablet {
+            font-size: 36px;
+        }
 
-        p {
-            font-size: 170px;
+        @include laptop {
+            font-size: 48px;
+        }
+
+        @include desktop {
+            font-size: 60px;
         }
     }
 
-    @include laptop {}
 
-    @include desktop {
-        border-width: 3px;
-
-        p {
-            font-size: 25 0px;
-        }
-    }
 }
 
 .notFound-links__wrap {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 28px;
+    gap: 8px;
 
     @include tablet {
-        flex-direction: row;
-        justify-content: center;
-        gap: 60px;
+        gap: 20px;
     }
 
     @include laptop {}
@@ -118,4 +156,42 @@
             }
         }
     }
+}
+
+.notFound-img-wraper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: -46px;
+
+    @include tablet {
+        bottom: -69px;
+    }
+
+    @include laptop {
+        width: fit-content;
+        align-self: flex-end;
+    }
+
+    @include desktop {
+        bottom: -98px;
+    }
+}
+
+.notFound-img {
+    width: 328px;
+    height: 423px;
+
+    @include tablet {
+        width: 496px;
+        height: 640px;
+    }
+
+    @include desktop {
+        width: 698px;
+        height: 902px;
+    }
+
 }

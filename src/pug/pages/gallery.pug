@@ -28,23 +28,23 @@ block content
     h1.page__title Галерея
     ul.gallery__filter-btn-list 
       li 
-        button(type="button" data-gallery-fltr-btn="views").gallery__filter-btn.active Краєвиди
+        button(type="button" data-gallery-id="1").gallery__filter-btn.active Краєвиди
       li 
-        button(type="button" data-gallery-fltr-btn="exterior").gallery__filter-btn Екстер'єр
+        button(type="button" data-gallery-id="2").gallery__filter-btn Екстер'єр
       li 
-        button(type="button" data-gallery-fltr-btn="interior").gallery__filter-btn Інтер'єр
+        button(type="button" data-gallery-id="3").gallery__filter-btn Інтер'єр
       li 
-        button(type="button" data-gallery-fltr-btn="relax").gallery__filter-btn Зони відпочинку
-    .swiper-gallery
+        button(type="button" data-gallery-id="4").gallery__filter-btn Зони відпочинку
+    .swiper-gallery(data-gallery-slider)
       .swiper-button-prev
         +svg("arrow")
       .swiper-button-next
         +svg("arrow")
-      .swiper-wrapper.views
-        .swiper-slide
-          img(src="./assets/images/home/luxary.jpg" alt="фото")
-        .swiper-slide
-          img(src="./assets/images/home/luxary.jpg" alt="фото")
+      .swiper-wrapper
+        //- .swiper-slide
+        //-   img(src="./assets/images/home/luxary.jpg" alt="фото")
+        //- .swiper-slide
+        //-   img(src="./assets/images/home/luxary.jpg" alt="фото")
 
 block footer
   include ../includes/footer.pug

@@ -1,0 +1,84 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'purchase-terms'
+    var id_page = 'id-page-purchase-terms'
+    var class_page = 'class-page-purchase-terms'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/purchaseTerms.bundle.js')
+block content
+  section.documents.container.safe
+    h1.page__title Умови придбання
+    .home-safe__text-block-wrap 
+      h2.home-safe__title Необхідні документи для укладення угоди
+      .home-safe__descr-wrap
+        p.home-safe__descr Для укладення договору купівлі-продажу необхідні копії з оригіналу паспорта громадянина України та його ІПН. У Деяких випадках необхідна нотаріально завірена згода чоловіка\ дружини.
+    .bg-parallax-wrap
+      img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+  section.section.home-quality.location-harmony.safe-parking.purchse-analize
+    .container.location__harmony-container
+
+
+      h2.home-sensation__title Аналіз опцій
+      p.home-sensation__descr Варіанти розрахунку для вашого майбутнього житла
+
+      .home-quality__descr-wrap
+
+        p Всі розрахунки відбуваються у національній валюті в безготівковій формі,по курсу НБУ на дату оплати чергового платежу.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+  section.section.hills-club-cinema.container
+    .home-safe__text-block-wrap 
+      h2.home-safe__title Варіанти придбання
+      .home-safe__descr-wrap
+        p.home-safe__descr Ми пропонуємо вам широкий спектр варіантів придбання, щоб забезпечити вам максимальний комфорт і зручність.
+    .cinema__content-wrap 
+      .cinema__text-wrap 
+        .cinema__align-wrap
+          h3 Варіант 1
+          p Всі розрахунки відбуваються у національній валюті в безготівковій формі,по курсу НБУ на дату оплати чергового платежу.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+    .cinema__content-wrap 
+      .cinema__text-wrap
+        .cinema__align-wrap 
+          h3 Варіант 2
+          p 50% перший платіж, розтермінування строком до 2 років з щомісячним платежем у рівних частках. Діють додаткові знижки.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+    .cinema__content-wrap 
+      .cinema__text-wrap 
+        .cinema__align-wrap
+          h3 Варіант 3
+          p 30% перший платiж, розтермінування строком до 2 років з щомісячним платежем у рівних частинах, знижок не передбачено.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+    .cinema__content-wrap 
+      .cinema__text-wrap
+        .cinema__align-wrap 
+          h3 Варіант 4
+          p LEV Development підготував спеціальну пропозицію на придбання житла для військовослужбовців ЗСУ та їхніх сімей, мешканців тимчасово окупованих територій та тих хто втратив житло: Для військовослужбовців ЗСУ та їхніх сімей, мешканців тимчасово окупованих територій знижка -12% від загальної вартості квартири (при всіх способах оплати); Для тих хто втратив житло -15% від загальної вартості квартири (при всіх способах оплати); Безвідсоткове розтермінування на період будівництва. Детальні умови можна дізнатися за посиланням, у відділах продажу або за телефоном.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

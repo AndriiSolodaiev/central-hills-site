@@ -69,6 +69,39 @@
   padding: 10px 18px;
   border-radius: 32px;
   border: 1px solid $accent-color;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $accent-color;
+    border-radius: inherit;
+    transition: all 0.5s ease;
+    transform: translateX(-100%);
+  }
+
+  &:hover {
+    &:before {
+      transform: translateX(0%);
+    }
+
+    p {
+      color: $color-white;
+    }
+  }
+
+  p {
+    transition: all 0.5s ease;
+
+    position: relative;
+    z-index: 2;
+  }
 }
 
 .header__logo {
@@ -104,26 +137,32 @@
 .scroll-down {
   .header__logo {
     transform: scale(0.8) translate(0, -70%);
+
     @include laptop {
       transform: scale(0.8) translate(-50%, -70%);
     }
   }
 }
+
 .mode--tablet {
   display: none;
+
   @include tablet {
     display: block;
   }
 }
+
 .mode--mobile {
   @include tablet {
     display: none;
   }
 }
+
 .header__rigth-block {
   display: flex;
   align-items: center;
   gap: 16px;
+
   .general-btn,
   .call-us__btn {
     display: flex;
@@ -136,6 +175,7 @@
   }
 
   @include tablet {
+
     .general-btn,
     .call-us__btn {
       width: auto;
@@ -144,13 +184,16 @@
       padding: 10px 18px;
     }
   }
+
   @include laptop {
     gap: 40px;
   }
 }
+
 .header__left-block {
   @extend .header__rigth-block;
 }
+
 .language__list {
   display: flex;
   align-items: center;
@@ -174,6 +217,7 @@
   color: $accent-color;
   opacity: 0.5;
   text-transform: uppercase;
+
   &.active {
     opacity: 1;
   }
@@ -186,6 +230,21 @@
   background: $accent-color;
   display: flex;
   align-items: center;
+
+  &:before {
+
+    background: $bg-color;
+
+  }
+
+  &:hover {
+
+
+    p {
+      color: $accent-color;
+    }
+  }
+
 }
 
 // .header__logo {
@@ -225,7 +284,7 @@
   height: 42px;
   border-radius: 50%;
   border: 1px solid $accent-color;
-
+  cursor: pointer;
   position: relative;
 
   & .line-over {
@@ -234,12 +293,16 @@
 
     left: 25%;
 
-    height: 1px;
+    height: 1.5px;
     width: 50%;
     background-color: $accent-color;
+
     // transform: rotate(45deg);
     // top: 22.5px;
     // left: 12px;
+    @include tablet {
+      height: 2px;
+    }
   }
 
   & .line-under {
@@ -247,13 +310,18 @@
     bottom: 40%;
 
     left: 25%;
-    height: 1px;
+    height: 1.75px;
     width: 50%;
     background-color: $accent-color;
+
     // transform: rotate(-45deg);
     // bottom: 22.5px;
     //   left: 12px;
+    @include tablet {
+      height: 2px;
+    }
   }
+
   @include tablet {
     width: 48px;
     height: 48px;
@@ -288,8 +356,7 @@
     left: 60px;
   }
 
-  & .contacts__phone {
-  }
+  & .contacts__phone {}
 }
 
 .call-us__content-wrapper {
@@ -361,8 +428,7 @@
   border: none;
   outline: none;
 
-  &::placeholder {
-  }
+  &::placeholder {}
 }
 
 .order-call__submit-btn {
@@ -388,6 +454,7 @@
   padding-top: 110px;
   padding-bottom: 0px;
   background: rgba(0, 0, 0, 0.5);
+
   @include tablet {
     padding-top: 120px;
     padding-bottom: 100px;
@@ -400,9 +467,11 @@
   padding-left: 175px;
   border-bottom: 1px solid $color-white;
   margin-bottom: 32px;
+
   @include tablet {
     margin-bottom: 80px;
   }
+
   .menu__title {
     @include section-title;
     color: $color-white;
@@ -416,11 +485,13 @@
   height: 90%;
   overflow: auto;
   padding-right: 20px;
+
   @include tablet {
     padding-right: 0;
     height: auto;
     overflow: visible;
   }
+
   @include laptop {
     flex-direction: row;
   }
@@ -428,10 +499,12 @@
 
 .header__nav-container {
   margin-bottom: 60px;
+
   @include tablet {
     height: 280px;
     margin-bottom: 300px;
   }
+
   @include laptop {
     height: 300px;
     margin-bottom: 0;
@@ -470,8 +543,15 @@
     display: flex;
     width: 100%;
     counter-increment: item;
-
     overflow: hidden;
+
+    &:hover {
+      .nav__link {
+        border-color: $color-bej;
+        padding-left: 15%;
+      }
+    }
+
     @include tablet {
       width: 45vw;
     }
@@ -480,8 +560,7 @@
       width: 30vw;
     }
 
-    @include desktop {
-    }
+    @include desktop {}
   }
 
   .nav__item::before {
@@ -500,21 +579,26 @@
       padding-top: 10px;
     }
 
+    cursor: pointer;
     position: relative;
     overflow: visible;
     display: flex;
     flex-direction: column;
     align-items: center;
+
     @include tablet {
       width: 45vw;
     }
+
     @include laptop {
       width: 30vw;
     }
+
     .sub-nav__text {
       align-items: center;
       justify-content: space-between;
     }
+
     .plus {
       display: flex;
       position: relative;
@@ -534,9 +618,11 @@
         transform: translate(-50%, -50%) rotate(90deg);
         transition: all 0.5s ease;
       }
+
       @include tablet {
         width: 25px;
         height: 2px;
+
         &::after {
           height: 2px;
         }
@@ -554,13 +640,22 @@
     li {
       margin-bottom: 10px;
       width: 100%;
+
+      &:hover {
+        .nav__link {
+          border-color: $color-bej;
+          padding-left: 15%;
+        }
+      }
     }
+
     .nav__link {
       @include text-style-txt;
       display: block;
       width: 100%;
       padding-left: 0;
     }
+
     @include tablet {
       position: absolute;
 
@@ -575,6 +670,7 @@
       left: 50%;
       transform: translateX(-50%);
     }
+
     @include desktop {
       top: 70px;
     }
@@ -589,6 +685,7 @@
   padding-left: 40px;
   flex: 1;
   width: 100%;
+  transition: all 0.3s ease-in-out;
 }
 
 .header__contacts-container {
@@ -597,10 +694,12 @@
   height: 100%;
   justify-content: space-between;
   row-gap: 12px;
+
   @include tablet {
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 50px;
+
     .header__label-wraper {
       width: 40%;
     }
@@ -611,6 +710,7 @@
     height: 65vh;
     padding-right: 50px;
     row-gap: 0;
+
     .header__label-wraper {
       width: auto;
     }
@@ -630,13 +730,16 @@
     gap: 10px;
     flex-wrap: wrap;
     max-width: 360px;
+
     @include tablet {
       max-width: 260px;
       flex-direction: row;
     }
+
     @include desktop {
       flex-direction: column;
     }
+
     li {
       margin-bottom: 0;
 
@@ -652,28 +755,34 @@
     padding: 0;
   }
 }
+
 .header__label-wraper {
   .contact__label {
     @include text-style-date;
     color: $color-bej;
     margin-bottom: 8px;
+
     @include tablet {
       margin-bottom: 4px;
     }
   }
+
   &:nth-child(2n) {
     padding-top: 32px;
     padding-bottom: 32px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
     @include tablet {
       border: none;
       padding: 0;
     }
   }
+
   &:nth-child(4) {
     display: flex;
     justify-content: center;
+
     @include tablet {
       display: block;
     }
@@ -682,7 +791,7 @@
 
 .social__list {
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 
   .mode--mobile {
     svg {
@@ -691,6 +800,7 @@
       margin-left: 0;
     }
   }
+
   @include tablet {
     align-items: flex-start;
     justify-content: flex-start;

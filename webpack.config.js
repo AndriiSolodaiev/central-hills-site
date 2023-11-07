@@ -21,6 +21,9 @@ const config = {
     contacts: './src/assets/scripts/gulp-modules/contacts.js',
     safe: './src/assets/scripts/gulp-modules/safe.js',
     progress: './src/assets/scripts/gulp-modules/progress.js',
+    progressDetails: './src/assets/scripts/gulp-modules/progress-details.js',
+    purchaseTerms: './src/assets/scripts/gulp-modules/purchase-terms.js',
+    techDescr: './src/assets/scripts/gulp-modules/tech-descr.js',
   },
   output: {
     filename: '[name].bundle.js',

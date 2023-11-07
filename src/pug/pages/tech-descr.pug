@@ -1,0 +1,159 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'tech-descr'
+    var id_page = 'id-page-tech-descr'
+    var class_page = 'class-page-tech-descr'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/techDescr.bundle.js')
+block content
+  section.documents.safe
+    .container
+      h1.page__title технічний опис
+      .home-safe__text-block-wrap 
+        h2.home-safe__title Основні параметри
+        .home-safe__descr-wrap
+          p.home-safe__descr Основні технічні параметри житлвого комплексу Cental Hills. Ці параметри гарантують ідеальне поєднання сучасного життя з високими стандартами якості.
+    .container--mobile  
+      .tech__indexes
+        .bg-parallax-wrap
+          img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+        .indexes-container 
+          .indexes-container__table 
+            .indexes-block
+              h3 Площа ділянки 
+              p 11,8 Га 
+            .indexes-block 
+              h3 Площа прогулянкових зон 
+              p 9,2 Га 
+            .indexes-block 
+              h3 Площа забудови 
+              p 2,6 Га 
+            .indexes-block 
+              h3 Кількість квартир 
+              p ~ 3000
+            .indexes-block 
+              h3 Кількість паркомісць підземний паркінг 
+              p ~ 3900
+            .indexes-block 
+              h3 Висота стелі 
+              p 2,7м-3м
+            .indexes-block 
+              h3 Площа 1к квартир 
+              p 34 - 46,7 м²
+            .indexes-block 
+              h3 Площа 2к квартир 
+              p 53,75 - 62,79 м²
+            .indexes-block 
+              h3 Площа 3к квартир 
+              p 84,46 м²
+  section.section.home-invest.tech-construction
+    .container
+      h2.home-sensation__title Відмінність у Деталях
+      p.home-sensation__descr Приміщення характеризується наступним рівнем виконання та оздоблення:
+    .container--mobile  
+      .home-invest__content-wrap
+        .home-invest__img-wrap 
+          img(src="./assets/images/home/invest.jpg" alt="фото" img-paralax)
+        .home-invest__descr-wrap.home-safe__descr-wrap
+          h3.constructions__title Несучі конструкції
+          p.home-safe__descr Залізобетонний монолітний каркас з самонесучими огороджувальними конструкціями
+  section.section.tech-walls 
+    .container--mobile
+      .tech-walls__container 
+        .walls-container__table 
+          .indexes-block.walls-block1
+            h2 Стіни
+          .indexes-block.walls-block2
+            p Стіни - це основа, на якій ґрунтується весь будинок. Ми вкладаємо особливу увагу у їхню конструкцію, забезпечуючи найвищий стандарт надійності та безпеки для наших мешканців. Кожен блок, кожна арматура обирається з урахуванням міцності та довговічності. 
+          .indexes-block 
+            h3 Зовнішні стіни 
+            p Керамічний блок-2НФ-М, товщиною - 250мм
+          .indexes-block 
+            h3 Міжквартирні перегородки
+            p Газобетон 100 мм, мінвата 50 мм, газобетон 100 мм з армуванням на клею
+          .indexes-block 
+            h3 Міжкімнатні 
+            p Газобетон 100 мм з армуванням на клею
+          .indexes-block 
+            h3 Стіни санвузлів
+            p Керамічний блок-2НФ-М, товщиною - 120мм.
+  section.section.container
+    .cinema__content-wrap 
+      .cinema__text-wrap 
+        .cinema__align-wrap
+          h3 Система внутрішньої побутової каналізації
+          p Трубопроводи з напірних труб з виведенням точки підключення до сантехнічних приладів. Каналізація К1. Стояки водопроводу виконані із металевої оцинкованої труби.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+    .cinema__content-wrap 
+      .cinema__text-wrap
+        .cinema__align-wrap 
+          h3 Електропроводка
+          p Заведений мідний кабель у квартири потужність 1к. Кв - 10кВт, 2к - 12кВт, 3К – 16кВт. Встановлені 3-фазні лічильники.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+    .cinema__content-wrap 
+      .cinema__text-wrap 
+        .cinema__align-wrap
+          h3 Наповнення квартири
+          p Металопластикові вікна з двокамерним енергозберігаючим склопакетом та п’ятикамерним профілем. Встановлення повірених лічильників на воду, електроенергію та теплової енергії. Чистова стяжка підлоги, вхідні металеві двері з МДФ-накладками, радіатори (розведено та підключено), зі штукатуренням стін гіпсовою штукатуркою (внутрішні стіни санвузлів, монолітні конструкції, газобетонні конструкції не штукатуряться), без фарбування стін.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+    .cinema__content-wrap 
+      .cinema__text-wrap
+        .cinema__align-wrap 
+          h3 Ліфт 
+          p 3 шт. до 25 поверху – 2 пасажирські 1 вантажний, швидкість – 1,6-2,5 м/с з системою контролю доступу за поверх з використанням карткового носія (СКС-СКД – система доступу та безпеки).
+      .bg-parallax-wrap
+        img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+    .cinema__content-wrap 
+      .cinema__text-wrap 
+        .cinema__align-wrap
+          h3 Територія, благоустрій
+          p Влаштовані дитячі майданчики, майданчики для відпочинку дорослого населення, спортивні майданчики та озеленення території, передбачено закриту територію з пунктом охорони.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+    .cinema__content-wrap 
+      .cinema__text-wrap
+        .cinema__align-wrap 
+          h3 Фасад
+          p Вентильований з керамограніту передбачені корзини для розміщення кондиціонерів, які задекоровані екранами з алюмінієвих композиційних панелей; Передбачено дренаж води з виносних блоків в тілі фасаду, утепленя — мінвата - 150мм.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+    .cinema__content-wrap 
+      .cinema__text-wrap 
+        .cinema__align-wrap
+          h3 Покрівля
+          p Багатошарова плоска покрівля з утепленням пінопластом ПСБ 35, товщиною 250 мм. + гідроізоляційний шар Мембрана.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+    .cinema__content-wrap 
+      .cinema__text-wrap
+        .cinema__align-wrap 
+          h3 Скління
+          p Тоновані енергозберігаючі склопакети Гардиан, забезпечують на 40% більшу енергоефективність, «Розумний» склопакет допоможе ізолювати проникнення шкідливих ультрафіолетових променів, не пропускає інфрачервоне опромінення, що дає можливість комфортного перебування в приміщені в літній час і економити на електроенергії, не вмикаючи кондиціонер.
+      .bg-parallax-wrap
+        img(src="./assets/images/home/luxary2.jpg" alt="фото" img-paralax)
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
