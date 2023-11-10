@@ -6,10 +6,10 @@ const baseFolder = window.location.href.match(/localhost/)
 
 const markersAdresses = {
   main: `${baseFolder}main.svg`,
-  office: `${baseFolder}office.svg`,
-  hotel: `${baseFolder}hotel.svg`,
-  shop: `${baseFolder}shop.svg`,
-  park: `${baseFolder}park.svg`,
+  hospital: `${baseFolder}hospital.svg`,
+  cafe: `${baseFolder}cafe.svg`,
+  // shop: `${baseFolder}shop.svg`,
+  // park: `${baseFolder}park.svg`,
   school: `${baseFolder}school.svg`,
   education: `${baseFolder}education.svg`,
   medicine: `${baseFolder}medicine.svg`,
@@ -32,7 +32,10 @@ line-height: 120%;"
 `;
 
 export async function fetchMarkersData(google) {
-  const buildLogoSize = new google.maps.Size(125, 55);
+  const buildLogoSize =
+    window.innerWidth > 768 ? new google.maps.Size(150, 70) : new google.maps.Size(120, 50);
+  const buildLogoSizeMain =
+    window.innerWidth > 768 ? new google.maps.Size(90, 90) : new google.maps.Size(60, 60);
   const sendData = new FormData();
   sendData.append('action', 'infrastructure');
   const url = window.location.href.match(/localhost/)
@@ -62,13 +65,16 @@ export async function fetchMarkersData(google) {
         type: el.code,
         id: marker.id,
         zIndex: 2,
-        icon: { url: markersAdresses[el.code], scaledSize: buildLogoSize },
+        icon: {
+          url: markersAdresses[el.code],
+          scaledSize: el.code === 'main' ? buildLogoSizeMain : buildLogoSize,
+        },
       });
     });
     return acc;
   }, []);
 
-  console.log(formatedMarkersDataForMap);
+  // console.log(formatedMarkersDataForMap);
 
   markersFromPrevSite().forEach(marker => {
     formatedMarkersDataForMap.push({
@@ -117,13 +123,59 @@ function mockData() {
     //         }
     //     ]
     // },
+
     {
-      name: 'Rams Garden Bahçelievler',
+      name: 'Dobrobut',
+      code: 'hospital',
+      list: [
+        {
+          name:
+            "<a style='text-decoration:none; color: #344742; font-weight: bold' target='_blank' href='https://maps.app.goo.gl/cmxmrfjsZZJhzVrM7'>Dobrobut</a>",
+          id: '01',
+          coordinations: {
+            latitude: '50.4112674',
+            elevation: '30.5424209',
+          },
+        },
+      ],
+    },
+    {
+      name: 'Dobrobut',
+      code: 'school',
+      list: [
+        {
+          name:
+            "<a style='text-decoration:none; color: #344742; font-weight: bold' target='_blank' href='https://maps.app.goo.gl/cmxmrfjsZZJhzVrM7'>Dobrobut</a>",
+          id: '02',
+          coordinations: {
+            latitude: '50.3967934',
+            elevation: '30.4999741',
+          },
+        },
+      ],
+    },
+    {
+      name: 'McDonald`s',
+      code: 'cafe',
+      list: [
+        {
+          name:
+            "<a style='text-decoration:none; color: #344742; font-weight: bold' target='_blank' href='https://maps.app.goo.gl/NhVG4gS2BaAkK5Vf7'>McDonald`s</a>",
+          id: '03',
+          coordinations: {
+            latitude: '50.4062762',
+            elevation: '30.5164642',
+          },
+        },
+      ],
+    },
+    {
+      name: 'Centrall Hills',
       code: 'main',
       list: [
         {
           name:
-            "<a style='text-decoration:none; color: rgba(122,144,73,1); font-weight: bold' target='_blank' href='https://ramsgarden.com/'>Rams Garden Bahçelievler</a>",
+            "<a style='text-decoration:none; color: #344742; font-weight: bold' target='_blank' href='https://maps.app.goo.gl/SBUaNvzaUVd5tmNp8'>Central Hills</a>",
           id: '00',
           coordinations: {
             latitude: '50.3873153',
@@ -131,21 +183,7 @@ function mockData() {
           },
         },
       ],
-    },
-    {
-      name: 'Rams Türkiye',
-      code: 'office',
-      list: [
-        {
-          name:
-            "<a style='text-decoration:none; color: rgba(122,144,73,1); font-weight: bold' href='https://rams-global.com/' target='_blank'>Rams Türkiye</a>",
-          id: '10',
-          coordinations: {
-            latitude: '40.997902',
-            elevation: '29.098045',
-          },
-        },
-      ],
+      zIndex: 10,
     },
   ];
 }

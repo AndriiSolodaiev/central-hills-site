@@ -50,10 +50,11 @@ function initMap() {
   /** Массив, куда записываются выбраные категории */
   const choosedCategories = new Set();
   choosedCategories.add('main');
+  choosedCategories.add('hospital');
   /** Елементы, при клике на который будет происходить фильтрация */
   const filterItems = document.querySelectorAll('[data-marker]');
   const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
+    zoom: 12.5,
     center,
     scrollwheel: false,
     navigationControl: false,
@@ -113,6 +114,7 @@ function initMap() {
   // polygon.setMap(map);
 
   const filterMarkers = function(category, categoriesArray) {
+    return;
     gmarkers1.forEach(el => {
       if (categoriesArray.has(el.category)) {
         el.setMap(map);
@@ -151,87 +153,35 @@ function initMap() {
   if (document.documentElement.clientWidth < 950) {
     // defaultMarkerSize = new google.maps.Size(40, 53);
   }
-  const buildLogoSize = new google.maps.Size(125, 55);
-  const markersAdresses = {
-    main: `${baseFolder}main.svg`,
-    cafe: `${baseFolder}cafe.svg`,
-    kinder: `${baseFolder}kindergarten.svg`,
-    shop: `${baseFolder}shop.svg`,
-    sport: `${baseFolder}sport.svg`,
-    school: `${baseFolder}school.svg`,
-    cafe: `${baseFolder}meal.svg`,
-    medicine: `${baseFolder}medicine.svg`,
-    bank: `${baseFolder}bank.svg`,
-    leisure: `${baseFolder}leisure.svg`,
-  };
-  const markerPopupStyle = `
-          style="
-          background: #ffffff;
-          color:#000000;
-          font-weight: bold;
-          padding:5px 10px;
-          font-size: 16px;
-          line-height: 120%;"
-          `;
+  // const buildLogoSize = new google.maps.Size(125, 55);
+  // const markersAdresses = {
+  //   hospital: `${baseFolder}hospital.svg`,
+  //   main: `${baseFolder}main.svg`,
+  //   cafe: `${baseFolder}cafe.svg`,
+  //   kinder: `${baseFolder}kindergarten.svg`,
+  //   shop: `${baseFolder}shop.svg`,
+  //   sport: `${baseFolder}sport.svg`,
+  //   school: `${baseFolder}school.svg`,
+  //   cafe: `${baseFolder}meal.svg`,
+  //   medicine: `${baseFolder}medicine.svg`,
+  //   bank: `${baseFolder}bank.svg`,
+  //   leisure: `${baseFolder}leisure.svg`,
+  // };
+  // const markerPopupStyle = `
+  //         style="
+  //         background: #ffffff;
+  //         color:#000000;
+  //         font-weight: bold;
+  //         padding:5px 10px;
+  //         font-size: 16px;
+  //         line-height: 120%;"
+  //         `;
 
   const ajaxMarkers = fetchMarkersData(google);
 
   ajaxMarkers.then(result => {
     putMarkersOnMap(result, map);
   });
-  console.log(ajaxMarkers);
-  const markersData = [
-    {
-      content: `<div ${markerPopupStyle}>ЖК Централ парк</div>`,
-      position: { lat: 49.2384203, lng: 28.4600074 },
-      type: 'main',
-      id: '1',
-      zIndex: 1000,
-      icon: { url: markersAdresses.main, scaledSize: buildLogoSize },
-    },
-    {
-      content: `<div ${markerPopupStyle}>Apricot private kindergarten</div>`,
-      type: 'school',
-      id: '16',
-      icon: { url: markersAdresses.school, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2384203, lng: 28.4610074 },
-    },
-    {
-      content: `<div ${markerPopupStyle}>Середня школа №21</div>`,
-      type: 'school',
-      id: '15',
-      icon: { url: markersAdresses.school, scaledSize: defaultMarkerSize },
-      position: { lat: 48.46599832746873, lng: 35.035520993734906 },
-    },
-    {
-      content: `<div ${markerPopupStyle}>Specialized School № 71</div>`,
-      type: 'school',
-      id: '14',
-      icon: { url: markersAdresses.school, scaledSize: defaultMarkerSize },
-      position: { lat: 48.453248601385674, lng: 35.05303045487341 },
-    },
-    {
-      content: `<div ${markerPopupStyle}>Public School № 19</div>`,
-      type: 'school',
-      id: '13',
-      icon: { url: markersAdresses.school, scaledSize: defaultMarkerSize },
-      position: { lat: 48.47094936663253, lng: 35.04204412631592 },
-    },
-    {
-      content: `<div ${markerPopupStyle}>Public School # 23</div>`,
-      type: 'school',
-      id: '22',
-      icon: { url: markersAdresses.school, scaledSize: defaultMarkerSize },
-      position: { lat: 48.456664020583055, lng: 35.064875090349446 },
-    },
-    {
-      content: `<div ${markerPopupStyle}>СЕРЕДНЯ ЗАГАЛЬНООСВІТНЯ ШКОЛА №18-ЗАГАЛЬНООСВІТНІЙ НАВЧАЛЬНИЙ ЗАКЛАД І-ІІІ СТУПЕНІВ</div>`,
-      type: 'school',
-      id: '11',
-      icon: { url: markersAdresses.school, scaledSize: defaultMarkerSize },
-      position: { lat: 48.46161597031695, lng: 35.04504820053086 },
-    },
-  ];
 
   function putMarkersOnMap(markers, map) {
     const infowindow = new google.maps.InfoWindow({
@@ -245,6 +195,7 @@ function initMap() {
       const mapMarker = new google.maps.Marker({
         map,
         category,
+        animation: google.maps.Animation.DROP,
         zIndex: marker.zIndex || 1,
         icon: marker.icon,
         dataId: +marker.id,
@@ -255,6 +206,7 @@ function initMap() {
       initedMarkers.push(mapMarker);
 
       google.maps.event.addListener(mapMarker, 'click', function() {
+        // window.location.href = `http://maps.apple.com/?daddr=${marker.position.lat},${marker.position.lng}&dirflg=d`;
         infowindow.setContent(marker.content);
         infowindow.open(map, mapMarker);
         map.panTo(this.getPosition());
@@ -263,7 +215,7 @@ function initMap() {
       gmarkers1.push(mapMarker);
     });
     map.initedMarkers = initedMarkers;
-    console.log(map);
+    // console.log(map);
     filterMarkers('main', choosedCategories);
     markersHightlight(google, map, infowindow);
     // markersHandler();
@@ -277,17 +229,17 @@ function markersHightlight(google, map, infowindow) {
   //   content: '',
   //   maxWidth: 280,
   // });
-  querySelectorWithNodeList('[data-marker-id]', item => {
-    item.addEventListener('click', () => {
-      const marker = map.initedMarkers.find(el => {
-        return el.dataId === +item.dataset.markerId;
-      });
-      if (marker === undefined) return;
-      infowindow.setContent(marker.content);
-      infowindow.open(map, marker);
-      // console.log(marker);
-    });
-  });
+  // querySelectorWithNodeList('[data-marker-id]', item => {
+  //   item.addEventListener('click', () => {
+  //     const marker = map.initedMarkers.find(el => {
+  //       return el.dataId === +item.dataset.markerId;
+  //     });
+  //     if (marker === undefined) return;
+  //     infowindow.setContent(marker.content);
+  //     infowindow.open(map, marker);
+  //     // console.log(marker);
+  //   });
+  // });
   // console.log(document.querySelectorAll('[data-marker-id]'));
   // console.log(map);
 }
@@ -304,8 +256,8 @@ function markersHandler() {
     const markerId = target.closest('[data-marker-id]').dataset.markerId;
     const marker = map.initedMarkers.find(marker => marker.dataId == markerId);
     marker && map.setCenter(marker.getPosition());
-    console.log(map.initedMarkers.find(marker => marker.dataId == markerId));
-    console.log(map);
+    // console.log(map.initedMarkers.find(marker => marker.dataId == markerId));
+    // console.log(map);
     // console.log(marker);
   });
 }

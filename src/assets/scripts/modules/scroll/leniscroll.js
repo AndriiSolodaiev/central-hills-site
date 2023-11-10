@@ -15,7 +15,7 @@ export const initSmoothScrolling = () => {
     infinite: false, // Lower values create a smoother scroll effect
     smoothWheel: true, // Enables smooth scrolling for mouse wheel events
   });
-  console.log(lenis);
+
   // Update ScrollTrigger each time the user scrolls
   lenis.on('scroll', () => ScrollTrigger.update());
   window.lenis = lenis;
