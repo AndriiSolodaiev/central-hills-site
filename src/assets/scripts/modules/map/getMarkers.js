@@ -1,8 +1,9 @@
 import markersFromPrevSite from './markersFromPrevSite';
+import axios from 'axios';
 
 const baseFolder = window.location.href.match(/localhost/)
   ? './assets/images/markers/'
-  : '/wp-content/themes/rams/assets/images/markers/';
+  : '/wp-content/themes/3d/assets/images/markers/';
 
 const markersAdresses = {
   main: `${baseFolder}main.svg`,
@@ -36,61 +37,26 @@ export async function fetchMarkersData(google) {
     window.innerWidth > 768 ? new google.maps.Size(150, 70) : new google.maps.Size(120, 50);
   const buildLogoSizeMain =
     window.innerWidth > 768 ? new google.maps.Size(90, 90) : new google.maps.Size(60, 60);
-  const sendData = new FormData();
-  sendData.append('action', 'infrastructure');
-  const url = window.location.href.match(/localhost/)
-    ? 'https://central-park-wp.smarto.com.ua/wp-admin/admin-ajax.php'
-    : '/wp-admin/admin-ajax.php';
-  // let markersData = window.location.href.match(/localhost|smarto/) ? Promise.resolve(mockData()) : await fetch(url, {
-  //   method: 'POST',
-  //   body: sendData,
-  // });
-  let markersData = Promise.resolve(mockData());
-  // markersData = window.location.href.match(/localhost|smarto/) ? mockData() : await markersData.json();
-  markersData = mockData();
-  if (!markersData) {
+  const fd = new FormData();
+  fd.append('action', 'infrastructure');
+  const markersData = [];
+  let ajaxMarkersData = await fetch('/wp-admin/admin-ajax.php', { method: 'POST', body: fd });
+  ajaxMarkersData = await ajaxMarkersData.json();
+  if (!ajaxMarkersData) {
     console.warn('Wrong data recieved');
     return;
   }
 
-  let formatedMarkersDataForMap = markersData.reduce((acc, el) => {
-    if (!el.list) return acc;
-    el.list.forEach(marker => {
-      acc.push({
-        content: `<div ${markerPopupStyle}>${marker.name}</div>`,
-        position: {
-          lat: marker.coordinations.latitude,
-          lng: marker.coordinations.elevation,
-        },
-        type: el.code,
-        id: marker.id,
-        zIndex: 2,
-        icon: {
-          url: markersAdresses[el.code],
-          scaledSize: el.code === 'main' ? buildLogoSizeMain : buildLogoSize,
-        },
-      });
-    });
-    return acc;
-  }, []);
-
-  // console.log(formatedMarkersDataForMap);
-
-  markersFromPrevSite().forEach(marker => {
-    formatedMarkersDataForMap.push({
-      content: marker.description,
-      position: {
-        lat: marker.lat,
-        lng: marker.lng,
-      },
-      type: marker.category,
-      id: marker.id,
-      zIndex: 1,
-      icon: { url: markersAdresses[marker.category], scaledSize: buildLogoSize },
+  ajaxMarkersData.map_points.forEach(el => {
+    markersData.push({
+      type: el.category,
+      icon: { url: el.img, scaledSize: el.category !== 'main' ? buildLogoSize : buildLogoSizeMain },
+      position: { lat: el.coords.split(', ')[0], lng: el.coords.split(', ')[1] },
+      text: el.name,
     });
   });
 
-  return formatedMarkersDataForMap;
+  return markersData;
 }
 
 function mockData() {
