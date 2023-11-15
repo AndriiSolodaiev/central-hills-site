@@ -11,10 +11,17 @@ const [progress, setProgressList, useProgressEffect] = useState({
   pending: false,
   container: document.querySelector('.progress__container'),
   data: [],
+  count: 1,
+  cardsCount: null,
 });
+const loadMoreBtn = document.querySelector('[data-load-more]');
 
 useProgressEffect(({ data, container }) => {
   container.insertAdjacentHTML('beforeend', data.map(el => progressCard(el)).join(''));
+  console.log(progress().data.length);
+  if (progress().count - 1 === Math.ceil(progress().cardsCount / 2)) {
+    loadMoreBtn.disabled = true;
+  }
 });
 // useProgressEffect(({ pending, container, type }) => {
 //   gsap.to(container, {
@@ -24,19 +31,23 @@ useProgressEffect(({ data, container }) => {
 //   pending ? container.classList.add('loading') : container.classList.remove('loading');
 // });
 
-getProgressList().then(res => {
+getProgressList(progress().count).then(res => {
   setProgressList({
     ...progress(),
-    data: res.data,
+    count: progress().count + 1,
+    data: res.data.data,
+    cardsCount: res.data.count,
   });
 });
 
-const loadMoreBtn = document.querySelector('[data-load-more]');
 loadMoreBtn.addEventListener('click', () => {
-  getProgressList().then(res => {
-    setProgressList({
-      ...progress(),
-      data: res.data,
-    });
+  getProgressList(progress().count).then(res => {
+    if (res.data.data) {
+      setProgressList({
+        ...progress(),
+        count: progress().count + 1,
+        data: res.data.data,
+      });
+    }
   });
 });

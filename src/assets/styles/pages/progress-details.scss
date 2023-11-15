@@ -134,6 +134,17 @@
 
 }
 
+.progress-details__video {
+
+  width: 100%;
+  height: calc(100vw * 0.55);
+
+  @include laptop {
+    height: calc(100vw * 0.4);
+  }
+
+}
+
 .progress-details__list {
   list-style-type: decimal;
   padding-left: 16px;

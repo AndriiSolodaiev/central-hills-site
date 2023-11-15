@@ -64,5 +64,10 @@
 }
 
 .load-more-btn {
-  @extend .general-btn
+  @extend .general-btn;
+
+  &:disabled {
+    visibility: hidden;
+    pointer-events: none;
+  }
 }

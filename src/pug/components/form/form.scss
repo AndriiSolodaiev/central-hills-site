@@ -102,6 +102,7 @@
       width: 600px;
     }
   }
+
   @include tablet {
     flex-direction: row;
     justify-content: space-between;
@@ -111,14 +112,11 @@
 }
 
 .form {
-  @include tablet {
-  }
+  @include tablet {}
 
-  @include laptop {
-  }
+  @include laptop {}
 
-  @include desktop {
-  }
+  @include desktop {}
 }
 
 .inputs-wrapper {
@@ -147,15 +145,14 @@
   @include text-style-date;
   color: $color-grey;
   margin-bottom: 8px;
-  @include tablet {
-  }
+
+  @include tablet {}
 
   @include laptop {
     margin-bottom: 20px;
   }
 
-  @include desktop {
-  }
+  @include desktop {}
 }
 
 .form-field__input {
@@ -191,6 +188,12 @@
 
   @extend .general-btn;
   width: fit-content;
+
+  &:hover .submit-btn__text {
+    color: $color-grey;
+    position: relative;
+    z-index: 1;
+  }
 }
 
 .form__button-svg {
@@ -205,16 +208,16 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+
   @include tablet {
     flex-direction: row;
     justify-content: space-between;
   }
 
-  @include laptop {
-  }
+  @include laptop {}
 
-  @include desktop {
-  }
+  @include desktop {}
+
   .form__disclaimer {
     @include text-style-helpfull;
     color: #7a7a7a;
@@ -241,7 +244,8 @@
   background-image: url('../images/libs/flags.png');
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
   .iti__flag {
     background-image: url('../images/libs/flags@2x.png');
   }

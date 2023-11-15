@@ -67,13 +67,12 @@ usePendingEffect(val => {
 // });
 
 const [gallerySliderState, setGallerySlider, useGallerySliderEffect] = useState({
-  title: '',
+  // title: '',
   gallery: [],
-  img: '',
+  sliders: {},
 });
 
 useGallerySliderEffect(state => {
-  console.log(state);
   setPending(true);
   $container.querySelector('.swiper-wrapper').innerHTML = state.gallery
     .map(
@@ -89,32 +88,32 @@ useGallerySliderEffect(state => {
 
   setTimeout(() => {
     setPending(false);
-  }, 1000);
+  }, 500);
 });
 
-const [galleryList, setgalleryList, useGalleryListEffect] = useState([]);
+// const [galleryList, setgalleryList, useGalleryListEffect] = useState([]);
 
 getGalleryList().then(res => {
-  setgalleryList(res.data.gallery_list);
+  setGallerySlider({
+    ...gallerySliderState(),
+    sliders: { ...res.data },
+  });
 
-  const data = res.data.gallery_list[0];
-  if (data && document.documentElement.classList.contains('mobile')) {
-    setGallerySlider({
-      // title: 'AAAAA',
-      gallery: [...data.gallery.map(el => (el.img_mob ? el.img_mob : el.img))],
-      // miniFlatImage: data.img,
-      type: data.type,
-      // type_gallery: data.type_gallery,
-    });
-    return;
-  }
+  const data = res.data[1];
+  // if (data && document.documentElement.classList.contains('mobile')) {
+  //   setGallerySlider({
+  //     // title: 'AAAAA',
+  //     gallery: [...data.gallery.map(el => (el.img_mob ? el.img_mob : el.img))],
+  //     // miniFlatImage: data.img,
+  //     // type: data.type,
+  //     // type_gallery: data.type_gallery,
+  //   });
+  //   return;
+  // }
   if (data) {
     setGallerySlider({
-      // title: 'AAAAA',
-      gallery: [...data.gallery.map(el => el.img)],
-      // miniFlatImage: data.img,
-      type: data.type,
-      // type_gallery: data.type_gallery,
+      gallery: [...data],
+      sliders: { ...res.data },
     });
   }
 });
@@ -127,34 +126,23 @@ document.querySelector('body').addEventListener('click', function(evt) {
   target.classList.add('active');
   gallerySlider.slideTo(0);
 
-  const data = galleryList().find(el => el.type == id);
-
-  if (data && document.documentElement.classList.contains('mobile')) {
-    setGallerySlider({
-      title: 'AAAAA',
-      gallery: [...data.gallery.map(el => (el.img_mob ? el.img_mob : el.img))],
-      // miniFlatImage: data.img,
-      type: data.type,
-      // type_gallery: data.type_gallery,
-    });
-    return;
-  }
+  const data = gallerySliderState().sliders[id];
+  console.log(data);
+  // if (data && document.documentElement.classList.contains('mobile')) {
+  //   setGallerySlider({
+  //     title: 'AAAAA',
+  //     gallery: [...data],
+  //     // miniFlatImage: data.img,
+  //     // type: data.type,
+  //     // type_gallery: data.type_gallery,
+  //   });
+  //   return;
+  // }
 
   if (data) {
     setGallerySlider({
-      title: 'AAAAA',
-      gallery: [...data.gallery.map(el => el.img)],
-      // miniFlatImage: data.img,
-      type: data.type,
-      // type_gallery: data.type_gallery,
+      ...gallerySliderState(),
+      gallery: [...data],
     });
   }
-
-  // getGallerySlider(id)
-  //     .then(({ data }) => {
-  //         setGallerySlider({
-  //             ...data
-  //         })
-  //         console.log(res);
-  //     })
 });
