@@ -542,7 +542,7 @@
   .nav__item {
     display: flex;
     width: 100%;
-    counter-increment: item;
+    // counter-increment: item;
     overflow: hidden;
 
     &:hover {
@@ -563,11 +563,11 @@
     @include desktop {}
   }
 
-  .nav__item::before {
-    content: '(' counter(item) ')';
-    @include text-style-date;
-    color: $color-bej;
-  }
+  // .nav__item::before {
+  //   content: '(' counter(item) ')';
+  //   @include text-style-date;
+  //   color: $color-bej;
+  // }
 
   .sub-nav {
     &.show-sub .plus::after {
