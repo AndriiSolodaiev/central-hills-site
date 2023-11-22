@@ -8,6 +8,19 @@
   @include desktop {
     padding-top: 208px;
   }
+
+  .swiper-progress-details {
+    img {
+      object-fit: cover;
+    }
+  }
+}
+
+.progress-details__text-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
 }
 
 .progress-details__title {
@@ -89,6 +102,7 @@
   @include section-title;
   margin-bottom: 32px;
   color: $color-grey;
+  align-self: flex-start;
 
 
   @include tablet {
@@ -97,26 +111,31 @@
 
   @include laptop {
     margin-bottom: 100px;
+
   }
 }
 
 .secondory-block-wrap {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+
   gap: 16px;
 
   p {
     @include text-style-txt;
     color: $color-grey;
 
-    @include tablet {
-      max-width: 80%;
-    }
+    @include tablet {}
 
-    @include laptop {
-      max-width: 60%;
-    }
+    @include laptop {}
+  }
+
+  @include tablet {
+    max-width: 70%;
+  }
+
+  @include laptop {
+    max-width: 50%;
   }
 }
 
