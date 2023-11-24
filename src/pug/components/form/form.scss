@@ -222,6 +222,10 @@
     @include text-style-helpfull;
     color: #7a7a7a;
 
+    @include tablet {
+      width: 70%;
+    }
+
     @include laptop {
       width: 500px;
     }
