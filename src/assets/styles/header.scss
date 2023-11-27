@@ -148,7 +148,8 @@
   display: none;
 
   @include tablet {
-    display: block;
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -745,6 +746,7 @@
 
       .social__link {
         @include text-style-txt;
+
       }
     }
   }
