@@ -7,7 +7,7 @@ export default function googleMap() {
 
 async function func() {
   const script = document.createElement('script');
-  let key = document.documentElement.dataset.key ? document.documentElement.dataset.key : '';
+  let key = 'AIzaSyCYwk23aIR-N5XTFmojgQRHbj_T6lOOUPE';
   // if (window.location.href.match(/localhost|smarto/)) key = '';
   // const key = '';
   script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap&language=${document.documentElement.getAttribute(
