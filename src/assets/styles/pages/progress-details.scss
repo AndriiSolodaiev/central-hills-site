@@ -20,7 +20,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-
 }
 
 .progress-details__title {
@@ -52,7 +51,6 @@
     p {
       @include text-style-txt;
       display: block;
-
     }
   }
 
@@ -62,7 +60,8 @@
     left: 40px;
   }
 
-  @include desktop {}
+  @include desktop {
+  }
 }
 
 .btn-back {
@@ -72,12 +71,9 @@
   border-radius: 50%;
   border: 1px solid $color-grey;
 
-
   svg {
     transform: scale(0.5);
   }
-
-
 
   @include laptop {
     width: 44px;
@@ -104,14 +100,12 @@
   color: $color-grey;
   align-self: flex-start;
 
-
   @include tablet {
     margin-bottom: 50px;
   }
 
   @include laptop {
     margin-bottom: 100px;
-
   }
 }
 
@@ -125,9 +119,11 @@
     @include text-style-txt;
     color: $color-grey;
 
-    @include tablet {}
+    @include tablet {
+    }
 
-    @include laptop {}
+    @include laptop {
+    }
   }
 
   @include tablet {
@@ -143,25 +139,20 @@
   @include section-descr;
   color: $color-white;
   margin-bottom: 50px;
-
-
 }
 
 .progress-details__video-section {
   background-color: $color-grey;
   padding: 60px 0;
-
 }
 
 .progress-details__video {
-
   width: 100%;
   height: calc(100vw * 0.55);
 
   @include laptop {
     height: calc(100vw * 0.4);
   }
-
 }
 
 .progress-details__list {
@@ -181,7 +172,6 @@
     margin-bottom: 16px;
   }
 
-
   li:last-child {
     margin-bottom: 0px;
   }
@@ -189,8 +179,7 @@
 
 .progress-details__last-container {
   h2 {
-
-    @extend .progress-details__primary-block
+    @extend .progress-details__primary-block;
   }
 }
 
@@ -198,17 +187,18 @@
   position: relative;
 
   img {
-    height: 70vh;
+    height: 35vh;
 
     @include tablet {
       height: 50vh;
     }
 
     @include laptop {
-      height: calc((100vw - 60px) / 1.25 * 0.5);
+      height: calc((100vw - 60px) / 1.25 * 0.6);
     }
 
-    @include desktop {}
+    @include desktop {
+    }
   }
 }
 
@@ -304,7 +294,7 @@
   }
 }
 
-.swiper-progress-details>.swiper-button-disabled {
+.swiper-progress-details > .swiper-button-disabled {
   pointer-events: none;
   opacity: 0;
 }
