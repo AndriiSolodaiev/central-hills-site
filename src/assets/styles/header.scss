@@ -189,11 +189,60 @@
   @include laptop {
     gap: 40px;
   }
+
+  .call-us__btn {
+    display: none;
+
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  .mode--mob--tablet {
+    display: flex;
+
+    @include laptop {
+      display: none;
+    }
+
+  }
+
+  .mode--laptop {
+    display: none;
+
+    @include laptop {
+      display: block;
+    }
+  }
 }
 
 .header__left-block {
   @extend .header__rigth-block;
 }
+
+.header__phone {
+  @include text-style-btn;
+  color: $accent-color;
+  font-weight: 400;
+
+
+  @media screen and (max-width: 1365px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $accent-color;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1365px) {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+
 
 .language__list {
   display: flex;
@@ -229,7 +278,7 @@
   color: $color-white;
 
   background: $accent-color;
-  display: flex;
+  display: flex !important;
   align-items: center;
 
   &:before {
