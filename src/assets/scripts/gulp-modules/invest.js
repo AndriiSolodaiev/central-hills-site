@@ -6,6 +6,7 @@ import c3 from 'c3';
 import 'c3/c3.css';
 initSmoothScrolling();
 gsap.registerPlugin(ScrollTrigger);
+const period = window.location.href.includes('/en/') ? 'Q' : 'кв.';
 
 const chart = c3.generate({
   bindto: '#chart',
@@ -41,18 +42,19 @@ const chart = c3.generate({
       type: 'timeseries',
       tick: {
         format: function(x) {
-          return `${Math.ceil((x.getMonth() + 1) / 3)} кв. ${x.getFullYear()}`;
+          return `${Math.ceil((x.getMonth() + 1) / 3)} ${period} ${x.getFullYear()}`;
         },
 
         // values: ['2013-01-05', '2013-01-10'],
       },
     },
     y: {
+      min: 1000,
       tick: {
         format: function(d) {
           return '$' + d + '/m2';
         },
-        values: ['0', '1000', '1500', '2000', '2500', '3000'],
+        values: ['1000', '1500', '2000', '2500', '3000'],
       },
     },
   },

@@ -15,7 +15,8 @@
     gap: 50px;
   }
 
-  @include desktop {}
+  @include desktop {
+  }
 }
 
 .gallery__filter-btn {
@@ -36,17 +37,19 @@
   overflow: hidden;
 
   img {
-    height: 70vh;
+    object-fit: cover;
+    height: 35vh;
 
     @include tablet {
-      height: 50vh;
+      height: calc((100vw - 48px) * 0.5);
     }
 
     @include laptop {
-      height: calc((100vw - 60px) / 1.25 * 0.5);
+      height: calc((100vw - 60px) / 1.1 * 0.6);
     }
 
-    @include desktop {}
+    @include desktop {
+    }
   }
 
   &.pending {
@@ -74,7 +77,7 @@
       background-color: $bg-color;
       width: 100%;
       height: 100%;
-      animation: fadeIn .25s ease-out;
+      animation: fadeIn 0.25s ease-out;
       z-index: 39;
     }
 
@@ -190,7 +193,7 @@
   }
 }
 
-.swiper-gallery>.swiper-button-disabled {
+.swiper-gallery > .swiper-button-disabled {
   pointer-events: none;
   opacity: 0;
 }

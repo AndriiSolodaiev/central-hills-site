@@ -7,7 +7,7 @@ export default function googleMap() {
 
 async function func() {
   const script = document.createElement('script');
-  let key = document.documentElement.dataset.key ? document.documentElement.dataset.key : '';
+  let key = 'AIzaSyCYwk23aIR-N5XTFmojgQRHbj_T6lOOUPE';
   // if (window.location.href.match(/localhost|smarto/)) key = '';
   // const key = '';
   script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap&language=${document.documentElement.getAttribute(
@@ -44,7 +44,7 @@ function initMap() {
   const gmarkers1 = [];
   //28.4600074, 49.2384203
   const center = {
-    lat: 50.3873153,
+    lat: 50.4073153,
     lng: 30.5352754,
   };
   /** Массив, куда записываются выбраные категории */
@@ -207,8 +207,8 @@ function initMap() {
 
       google.maps.event.addListener(mapMarker, 'click', function() {
         // window.location.href = `http://maps.apple.com/?daddr=${marker.position.lat},${marker.position.lng}&dirflg=d`;
-        infowindow.setContent(marker.content);
-        infowindow.open(map, mapMarker);
+        // infowindow.setContent(marker.content);
+        // infowindow.open(map, mapMarker);
         map.panTo(this.getPosition());
       });
       mapMarker.name = marker.type;

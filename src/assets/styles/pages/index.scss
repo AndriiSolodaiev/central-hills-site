@@ -1,7 +1,7 @@
 .section {
-
   margin-bottom: 60px;
 
+  overflow: hidden;
   @include tablet {
     margin-bottom: 100px;
   }
@@ -10,12 +10,17 @@
     margin-bottom: 150px;
   }
 
-  @include desktop {}
+  @include desktop {
+  }
 }
 
 .home-hero {
   padding-top: 120px;
-
+  .bg-parallax-wrap {
+    img {
+      object-position: left;
+    }
+  }
   @include tablet {
     padding-top: 180px;
   }
@@ -93,7 +98,8 @@
     }
   }
 
-  @include desktop {}
+  @include desktop {
+  }
 }
 
 .bg-parallax-wrap {
@@ -110,7 +116,8 @@
     height: calc((100vw - 60px) * 0.43);
   }
 
-  @include desktop {}
+  @include desktop {
+  }
 
   img {
     object-fit: cover;
@@ -135,7 +142,8 @@
     margin-bottom: 50px;
   }
 
-  @include desktop {}
+  @include desktop {
+  }
 }
 
 .home-safe__title {
@@ -167,7 +175,8 @@
     gap: 40px;
   }
 
-  @include desktop {}
+  @include desktop {
+  }
 
   .home-safe__descr {
     @include text-style-txt;
@@ -189,7 +198,7 @@
 
 .home-safe {
   .bg-parallax-wrap {
-    height: 100vh;
+    height: 70vh;
 
     @include tablet {
       height: 80vh;
@@ -236,7 +245,8 @@
   flex-direction: column;
   gap: 16px;
 
-  @include tablet {}
+  @include tablet {
+  }
 
   @include laptop {
     flex-direction: row;
@@ -338,7 +348,7 @@
 
 .bg-img__title {
   @include section-descr;
-
+  line-height: 110%;
   max-width: 900px;
   color: $color-white;
   margin-bottom: 36px;
@@ -380,7 +390,8 @@
   width: 100%;
   height: 80vh;
 
-  @include tablet {}
+  @include tablet {
+  }
 
   @include laptop {
     height: 100vh;
@@ -455,7 +466,8 @@
   flex-direction: column;
   width: 100%;
 
-  @include tablet {}
+  @include tablet {
+  }
 
   @include laptop {
     height: 320px;
@@ -482,7 +494,8 @@
     flex: 1;
   }
 
-  @include desktop {}
+  @include desktop {
+  }
 }
 
 .home-invest__descr-wrap {
@@ -607,12 +620,20 @@
 }
 
 .home-nature {
-  height: 75vh;
+  height: 60vh;
+  .home-infrastructure__bg-relative {
+    img {
+      object-position: right;
+    }
+  }
+  @include tablet {
+    height: 75vh;
+  }
 }
 
 .swiper-luxary {
   .bg-parallax-wrap {
-    height: 80vh;
+    height: 35vh;
 
     @include tablet {
       height: calc((100vw - 48px) * 0.5);
@@ -668,7 +689,8 @@
     gap: 161px;
   }
 
-  @include desktop {}
+  @include desktop {
+  }
 }
 
 .progress-card {

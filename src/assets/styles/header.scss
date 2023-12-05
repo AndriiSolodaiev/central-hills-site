@@ -176,7 +176,6 @@
   }
 
   @include tablet {
-
     .general-btn,
     .call-us__btn {
       width: auto;
@@ -282,19 +281,14 @@
   align-items: center;
 
   &:before {
-
     background: $bg-color;
-
   }
 
   &:hover {
-
-
     p {
       color: $accent-color;
     }
   }
-
 }
 
 // .header__logo {
@@ -406,7 +400,8 @@
     left: 60px;
   }
 
-  & .contacts__phone {}
+  & .contacts__phone {
+  }
 }
 
 .call-us__content-wrapper {
@@ -478,7 +473,8 @@
   border: none;
   outline: none;
 
-  &::placeholder {}
+  &::placeholder {
+  }
 }
 
 .order-call__submit-btn {
@@ -504,7 +500,7 @@
   padding-top: 110px;
   padding-bottom: 0px;
   background: rgba(0, 0, 0, 0.5);
-
+  backdrop-filter: blur(12px);
   @include tablet {
     padding-top: 120px;
     padding-bottom: 100px;
@@ -610,7 +606,8 @@
       width: 30vw;
     }
 
-    @include desktop {}
+    @include desktop {
+    }
   }
 
   // .nav__item::before {
@@ -795,7 +792,6 @@
 
       .social__link {
         @include text-style-txt;
-
       }
     }
   }
