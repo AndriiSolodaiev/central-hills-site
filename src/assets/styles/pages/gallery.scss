@@ -15,8 +15,7 @@
     gap: 50px;
   }
 
-  @include desktop {
-  }
+  @include desktop {}
 }
 
 .gallery__filter-btn {
@@ -45,11 +44,10 @@
     }
 
     @include laptop {
-      height: calc((100vw - 60px) / 1.1 * 0.6);
+      height: calc((100vw - 60px) / 1.5 * 0.6);
     }
 
-    @include desktop {
-    }
+    @include desktop {}
   }
 
   &.pending {
@@ -193,7 +191,7 @@
   }
 }
 
-.swiper-gallery > .swiper-button-disabled {
+.swiper-gallery>.swiper-button-disabled {
   pointer-events: none;
   opacity: 0;
 }

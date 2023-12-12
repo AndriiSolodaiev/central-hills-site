@@ -27,7 +27,7 @@ const gallerySlider = new Swiper($container, {
     },
     1366: {
       spaceBetween: 50,
-      slidesPerView: 1.25,
+      slidesPerView: 1.5,
     },
   },
   navigation: {
