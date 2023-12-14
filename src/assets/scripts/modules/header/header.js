@@ -58,6 +58,8 @@ tl.add(() => {
 
   .to(headerBg, { backgroundColor: 'transparent', duration: 0.1 }, '<')
   .to('.language__item', { color: '#fff' }, '<')
+  .to('.header__phone', { color: '#fff', borderColor: '#fff' }, '<')
+  .to('.header__phone svg path', { stroke: '#fff' }, '<')
   .to(' .header .call-us__btn', { borderColor: '#fff', color: '#fff' }, '<')
   .to('.call-us__btn .mode--mobile path', { stroke: '#fff' }, '<')
   .to('.header .general-btn', { backgroundColor: '#fff', color: '#2A4635' }, '<')
