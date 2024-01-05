@@ -71,6 +71,7 @@ tl.add(() => {
     { rotate: -45, yPercent: -190, duration: 0.5, backgroundColor: '#fff' },
     '<',
   )
+  .to('.menu__bg', { backdropFilter: 'blur(12px)', duration: 0.3 }, '<')
   .to(
     '.menu-btn__burger .line-over',
     { rotate: 45, yPercent: 190, duration: 0.5, backgroundColor: '#fff' },

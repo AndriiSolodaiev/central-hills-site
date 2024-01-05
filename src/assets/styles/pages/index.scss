@@ -262,6 +262,7 @@
 
   @include tablet {
     height: 41vh;
+    min-height: 420px;
   }
 
   @include laptop {
@@ -370,7 +371,7 @@
 
 .home-arcitech__slider-img__wrap {
   height: 50vh;
-
+  min-height: 330px;
   img {
     object-fit: cover;
     height: 100%;
@@ -378,6 +379,7 @@
 
   @include tablet {
     height: 40vh;
+    min-height: 400px;
   }
 
   @include laptop {
@@ -389,6 +391,7 @@
   position: relative;
   width: 100%;
   height: 80vh;
+  min-height: 600px;
 
   @include tablet {
   }
@@ -634,6 +637,7 @@
 .swiper-luxary {
   .bg-parallax-wrap {
     height: 35vh;
+    min-height: 250px;
 
     @include tablet {
       height: calc((100vw - 48px) * 0.5);
