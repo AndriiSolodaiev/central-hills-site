@@ -16,11 +16,7 @@
 
 .home-hero {
   padding-top: 120px;
-  .bg-parallax-wrap {
-    img {
-      object-position: left;
-    }
-  }
+
   @include tablet {
     padding-top: 180px;
   }
