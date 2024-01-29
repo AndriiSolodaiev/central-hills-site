@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import { gsap, ScrollTrigger, CustomEase } from 'gsap/all';
 import { initSmoothScrolling } from '../modules/scroll/leniscroll';
+import googleMap from '../modules/map/map';
 import '../modules/helpers/imgParallax';
 
 initSmoothScrolling();
@@ -98,3 +99,5 @@ const swiperLuxary = new Swiper('.swiper-luxary', {
   //   nextEl: '.swiper-button-next',
   // },
 });
+
+googleMap();
