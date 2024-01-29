@@ -1,5 +1,6 @@
 const webpack = require('webpack');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+// const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const config = {
   mode: process.argv.includes('--production') ? 'production' : 'development',
@@ -28,14 +29,28 @@ const config = {
   output: {
     filename: '[name].bundle.js',
   },
+  experiments: {
+    topLevelAwait: true,
+  },
   optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        terserOptions: {
+          compress: {
+            drop_console: process.argv.includes('--production'),
+          },
+        },
+      }),
+    ],
     splitChunks: {
       cacheGroups: {
         commons: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks(chunk) {
-            // exclude `my-excluded-chunk`
+            // exclude my-excluded-chunk
             return chunk.name !== 'immediate-loading';
           },
         },
@@ -71,14 +86,14 @@ const config = {
       $: 'jquery',
       jQuery: 'jquery',
     }),
-    new UglifyJSPlugin({
-      sourceMap: true,
-      uglifyOptions: {
-        compress: {
-          drop_console: process.argv.includes('--production'),
-        },
-      },
-    }),
+    // new UglifyJSPlugin({
+    //   sourceMap: true,
+    //   uglifyOptions: {
+    //     compress: {
+    //       drop_console: process.argv.includes('--production'),
+    //     },
+    //   },
+    // }),
   ],
 };
 
