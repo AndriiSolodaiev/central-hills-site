@@ -235,6 +235,8 @@
 
     @include laptop {
       display: block;
+      display: flex;
+      flex-direction: column;
     }
   }
 }

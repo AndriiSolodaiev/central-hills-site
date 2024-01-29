@@ -32,6 +32,9 @@
         position: relative;
         padding-bottom: 57.1%;
         overflow: hidden;
+        @include to(600px){
+            padding-bottom: 100%;
+        }
     }
     &__title {
         margin-top: auto;
@@ -51,6 +54,16 @@
     }
     &__link {
         margin-bottom: 0;
+        padding: 0;
+        border-bottom-color: $color-white;
+        &--rotated svg {
+            transform-origin: center;
+            transform-box: fill-box;
+            transform: rotate(180deg);
+            margin-left: 0;
+            margin-right: 20px;
+            
+        }
     }
     &__gradient {
         position: absolute;
@@ -84,6 +97,9 @@
         letter-spacing: -0.64px;
         @include to(1360px){
             font-size: 48px;
+        }
+        @include to(1024px){
+            font-size: 36px;
         }
     }
 

@@ -7,6 +7,9 @@
     --size: 48px;
     padding-left: 12px;
     padding-right: 12px;
+    @include to(600px){
+        width: 100%;
+    }
     @media screen and (min-width: 768px) {
         --size: 96px;
     }
@@ -31,6 +34,11 @@
         
         }
     }
+    &__text {
+        max-width: 150px;
+        line-height: 1.25em;
+        text-align: center;
+    }
     &:hover &__icon {
         circle {
             fill: $accent-color
@@ -50,12 +58,17 @@
     // justify-content: center;
     padding-left: 10%;
     padding-right: 10%;
+    align-items: flex-start;
     row-gap: 20px;
     @media screen and (max-width:600px){
-        flex-direction: column;
+        // flex-direction: column;
         justify-content: center;
+        row-gap: 20px;
+        &>* {
+            width: 50%;
+        }
         &>:nth-child(n+2){
-            margin-top: 20px;
+            // margin-top: 20px;
         }
     }
 }
