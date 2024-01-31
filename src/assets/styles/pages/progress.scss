@@ -14,6 +14,10 @@
 
     .progrss-img-wrap {
       height: calc((100vw - 48px - 16px) / 2 * 1.2);
+      height: auto;
+      img {
+        object-fit: contain;
+      }
     }
 
     &:nth-child(4n - 2),
