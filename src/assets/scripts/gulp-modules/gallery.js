@@ -116,6 +116,18 @@ getGalleryList().then(res => {
       sliders: { ...res.data },
     });
   }
+
+  {
+
+    /*Зміна стану якщо в URL є дані про галерею яку треба відкрити спочатку. В посиланні на сторінку галареї можна вказати gallery_id=[номер галереї] */
+    let params = new URLSearchParams(document.location.search);
+    let galleryId = params.get("gallery_id"); 
+  
+    // if (galleryId ) 
+    if (galleryId && gallerySliderState().sliders[galleryId]) {
+      document.querySelector(`[data-gallery-id="${galleryId}"]`).click();
+    }
+  }
 });
 
 document.querySelector('body').addEventListener('click', function(evt) {
@@ -127,7 +139,6 @@ document.querySelector('body').addEventListener('click', function(evt) {
   gallerySlider.slideTo(0);
 
   const data = gallerySliderState().sliders[id];
-  console.log(data);
   // if (data && document.documentElement.classList.contains('mobile')) {
   //   setGallerySlider({
   //     title: 'AAAAA',

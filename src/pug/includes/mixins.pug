@@ -64,3 +64,23 @@ mixin responsiveImage(srcset, alt, plainLoad)
 			img(data-src=srcset[0].split(' ')[0], alt=alt)
 
 include ../components/form/form.pug
+
+
+mixin inner-pages-switcher(prevLink, nextLink, prevTitle, nextTitle, prevImg, nextImg)
+	.inner-pages-switcher-wrapper.container.section
+		a.inner-pages-switcher(href=prevLink)
+			.inner-pages-switcher-wrap
+				.inner-pages-switcher__content
+					img.inner-pages-switcher__img(src=prevImg alt="foto" title="foto")
+					.inner-pages-switcher__gradient
+					.inner-pages-switcher__title #{prevTitle}
+					.footer__call-us-btn().inner-pages-switcher__link.link-hover Перейти до розділу
+						+svg("arrow")
+		a.inner-pages-switcher(href=nextLink)
+			.inner-pages-switcher-wrap
+				.inner-pages-switcher__content
+					img.inner-pages-switcher__img(src=nextImg alt="foto" title="foto")
+					.inner-pages-switcher__gradient
+					.inner-pages-switcher__title #{nextTitle}
+					.footer__call-us-btn().inner-pages-switcher__link.link-hover Перейти до розділу
+						+svg("arrow")

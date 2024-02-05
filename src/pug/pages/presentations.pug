@@ -1,0 +1,45 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'presentations'
+    var id_page = 'id-page-presentations'
+    var class_page = 'class-page-presentations'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+    var presentations = [
+      'Brochure',
+      'Fact Sheet',
+      'Building №2',
+      'Building №3',
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+block content
+  .container.documents
+    .page__title Презентації
+    .presentation-links-wrapper
+      each val in presentations
+        a.presentation-link(href="#" target="_blank")
+          <svg class="presentation-link__icon" width="189" height="188" viewBox="0 0 189 188" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="94.666" cy="94" r="93" stroke="#344742" stroke-width="2"/>
+            <circle cx="94.666" cy="94" r="93" stroke="black" stroke-opacity="0.2" stroke-width="2"/>
+            <path d="M96.666 75.24L96.666 107.907L110.666 93.9067L112.666 95.6667L95.3327 113L77.9993 95.6667L79.9993 93.9067L93.9993 107.907L93.9994 75.24L96.666 75.24Z" fill="#344742"/>
+            <path d="M96.666 75.24L96.666 107.907L110.666 93.9067L112.666 95.6667L95.3327 113L77.9993 95.6667L79.9993 93.9067L93.9993 107.907L93.9994 75.24L96.666 75.24Z" fill="black" fill-opacity="0.2"/>
+            </svg>
+          .presentation-link__text #{val}
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

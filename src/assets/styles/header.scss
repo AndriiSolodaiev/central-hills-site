@@ -234,7 +234,11 @@
     display: none;
 
     @include laptop {
+
+      display: block;
       display: flex;
+      flex-direction: column;
+
     }
   }
 }
@@ -421,8 +425,7 @@
     left: 60px;
   }
 
-  & .contacts__phone {
-  }
+  
 }
 
 .call-us__content-wrapper {
@@ -494,8 +497,7 @@
   border: none;
   outline: none;
 
-  &::placeholder {
-  }
+  
 }
 
 .order-call__submit-btn {
