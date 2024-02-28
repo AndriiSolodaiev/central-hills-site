@@ -54,7 +54,7 @@ function initMap() {
   /** Елементы, при клике на который будет происходить фильтрация */
   const filterItems = document.querySelectorAll('[data-marker]');
   const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12.5,
+    zoom: 13.5,
     center,
     scrollwheel: false,
     navigationControl: false,

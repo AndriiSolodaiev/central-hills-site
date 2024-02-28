@@ -16,9 +16,9 @@ $color-bej: #c6a682;
 
 $color-black: rgba(0, 0, 0, 1);
 $color-grey: #344742;
-$accent-color: #2a4635;
-$color-grennmedium: rgba(30, 69, 56, 1);
-$color-greendark: rgba(34, 54, 43, 1);
+$accent-color: rgb(42, 70, 53);
+$color-green-medium: rgba(30, 69, 56, 1);
+$color-green-dark: rgba(34, 54, 43, 1);
 $text-color: #808080;
 
 @mixin text-style-h-1() {

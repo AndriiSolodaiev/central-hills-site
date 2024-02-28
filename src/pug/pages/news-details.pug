@@ -1,0 +1,70 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'news-details'
+    var id_page = 'id-page-news-details'
+    var class_page = 'class-page-news-details'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/news-details.bundle.js')
+block content
+  section.progress-details
+    .container
+      h1.page__title.progress-details__title.news-details__title Жовтень 2023
+        a(href="").btn-back__wrap
+          .btn-back
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <path d="M15 0.85791L0.857863 15M0.857863 15L15 29.1422M0.857863 15L29.1421 15" stroke="#2A4635"/>
+            </svg>
+          p Назад
+      .swiper-progress-details.section 
+        .swiper-button-prev
+          +svg("arrow")
+        .swiper-button-next
+          +svg("arrow")
+        .swiper-wrapper.views
+          .swiper-slide
+            img(src="./assets/images/home/luxary.jpg" alt="фото")
+          .swiper-slide
+            img(src="./assets/images/home/luxary.jpg" alt="фото")
+
+  section.section.progress-details__text-wrap.container 
+    p.progress-details__primary-block На сьогодні вже введені в експлуатацію, приймають гостей та приносять власникам пасивний дохід перші два будинки нашого житлового комплексу.
+    .secondory-block-wrap 
+      p Тут кожен момент наповнений гармонією і можливістю відпочити від міської метушні. Ми розуміємо, що для вас важливі не лише простір і комфорт житлового приміщення, але і спокійне оточення, яке дозволить вам насолоджуватися кожним днем.
+      p Тут кожен момент наповнений гармонією і можливістю відпочити від міської метушні. Ми розуміємо, що для вас важливі не лише простір і комфорт житлового приміщення, але і спокійне оточення, яке дозволить вам насолоджуватися кожним днем.
+  section.section.progress-details__video-section 
+    .container
+      h2.video-section__title Відеозвіт з будівництва
+      video.progress-details__video
+        <source src="path" type="video/mp4" >
+          | Відео не відтворюється на вашому браузері
+  section.section.progress-details__text-wrap.container
+    h2.progress-details__primary-block У жовтні ми відзначили значний прогрес у розвитку нашого житлового комплексу. Важливі події та досягнення цього місяця включають:
+    ol.progress-details__list
+      li Завершення будівництва перших двох будинків: На початку жовтня ми завершили будівництво та готові приймати перших мешканців в наших двох сучасних будинках. Кожен із них обладнаний за сучасними стандартами та готовий надати комфорт та зручності мешканцям.
+      li Завершення ландшафтного дизайну та інфраструктури: Ми активно працювали над ландшафтним дизайном нашого комплексу, створюючи зелені зони, місця для відпочинку та парковки, щоб забезпечити комфортне середовище для наших мешканців.
+      li Покращення інфраструктури: Ми також вдосконалюємо інфраструктуру комплексу, включаючи дороги, освітлення та водопостачання, щоб забезпечити найвищий рівень комфорту та безпеки.
+
+  +inner-pages-switcher('#', '#', 'prevTitle', 'nextTitle', './assets/images/home/safe.jpg', './assets/images/home/safe.jpg')
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

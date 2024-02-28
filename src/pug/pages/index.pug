@@ -25,15 +25,24 @@ block scripts
   script(defer src='./assets/scripts/index.bundle.js')
 block content
   section.section.home-hero
-    .container 
+    .container.pointer-none 
       .home-hero__title-wrap
-        h1.home-hero__title Central 
-          br
-          | hills
+        h1.home-hero__title Central hills
       .home-hero__text
         p У 5 хвилинах від центру Києва, між Багриновою та Лисою горами, оповите зеленню, формується нове місто, у якому хочеться жити. 
-      .bg-parallax-wrap
-        img(src="./assets/images/home/hero.jpg" alt="фото" img-paralax)
+    .swiper-hero 
+      .swiper-pagination
+      .swiper-wrapper 
+        .swiper-slide 
+          img(src="./assets/images/home/hero.jpg" alt="фото" img-paralax)
+        .swiper-slide 
+          img(src="./assets/images/home/safe.jpg" alt="фото" img-paralax)
+        .swiper-slide 
+          img(src="./assets/images/home/nature.jpg" alt="фото" img-paralax)
+        .swiper-slide 
+          img(src="./assets/images/home/hero.jpg" alt="фото" img-paralax)
+      //- .bg-parallax-wrap
+      //-   img(src="./assets/images/home/hero.jpg" alt="фото" img-paralax)
   section.section.home-safe 
     .container
       .home-safe__text-block-wrap 
@@ -98,7 +107,7 @@ block content
       .home-arcitech__descr-wrap
         .home-safe__descr-wrap
           p.home-safe__descr Поринь у атмосферу прекрасного, в якому ти отримаєш естетичну насолоду, та душевний спокій
-          a(href="/").general-btn
+          a(href="/").general-btn.animation-btn
 
             p Перейти до 3D
       .swiper
@@ -112,6 +121,37 @@ block content
           .swiper-slide 
             .home-arcitech__slider-img__wrap
               img(src="./assets/images/home/architech.jpg" alt="фото" )
+
+  section.section.home-sensation.home-arcitech.progress
+    .container
+      h2.home-sensation__title Новини та акції
+      p.home-sensation__descr Новини та акції Central Hills: Доповнення вашого життя з кожним оновленням
+      .home-arcitech__descr-wrap
+        .home-safe__descr-wrap
+          p.home-safe__descr Отримуйте своєчасну інформацію та насолоджуйтеся перевагами, які роблять ваше життя в Central Hills найкращим.
+          a(href="/news").general-btn 
+            p Дізнатися більше
+      .swiper-news
+        .swiper-wrapper 
+          .swiper-slide
+            a(href="/").progress-card 
+              img(src="./assets/images/home/progress1.jpg" alt="prgress")
+              .progress-card__descr-wrap 
+                h3.progress-card__title Ми є визнаним лідером у сфері житлового будівництва в Києві.
+                p.progress-card__date 14.05.2023
+          .swiper-slide
+            a(href="/").progress-card 
+              img(src="./assets/images/home/progress2.jpg" alt="prgress")
+              .progress-card__descr-wrap 
+                h3.progress-card__title Ми є визнаним лідером у сфері житлового будівництва в Києві.
+                p.progress-card__date 14.05.2023
+          .swiper-slide
+            a(href="/").progress-card 
+              img(src="./assets/images/home/progress3.jpg" alt="prgress")
+              .progress-card__descr-wrap 
+                h3.progress-card__title Ми є визнаним лідером у сфері житлового будівництва в Києві.
+                p.progress-card__date 14.05.2023   
+
   section.section.home-infrastructure.container
     .home-infrastructure__bg  
       .home-infrastructure__bg-relative

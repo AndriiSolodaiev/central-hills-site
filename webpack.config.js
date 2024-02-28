@@ -25,6 +25,8 @@ const config = {
     progressDetails: './src/assets/scripts/gulp-modules/progress-details.js',
     purchaseTerms: './src/assets/scripts/gulp-modules/purchase-terms.js',
     techDescr: './src/assets/scripts/gulp-modules/tech-descr.js',
+    news: './src/assets/scripts/gulp-modules/news.js',
+    newsDetails: './src/assets/scripts/gulp-modules/news-details.js',
   },
   output: {
     filename: '[name].bundle.js',
