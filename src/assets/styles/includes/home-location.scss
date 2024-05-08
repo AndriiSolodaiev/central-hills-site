@@ -57,7 +57,7 @@
             line-height: normal;
             
             align-self: flex-end;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             @include to(1360px){
                 font-size: 24px;
             }
@@ -67,6 +67,7 @@
         }
         &-buttons {
             display: flex;
+            gap: 10px;
             flex-wrap: wrap;
             align-self: flex-end;
         }

@@ -13,6 +13,9 @@ window.addEventListener('scroll', function headerSquosh() {
     header.classList.remove('scroll-down');
   }
 });
+window.addEventListener('succesFormSend', () => {
+  dataLayer.push({'event': 'callback_request'});
+  }) 
 //pop up call us
 document.body.addEventListener('click', function(evt) {
   const target = evt.target.closest('[data-call-us-modal-close]');
