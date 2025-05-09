@@ -4,11 +4,11 @@ import mapStyle from './map-style';
 export default function googleMap() {
   global.initMap = initMap;
 }
-
+const maps = document.querySelectorAll('.map');
 async function func() {
   const script = document.createElement('script');
-  let key = 'AIzaSyCYwk23aIR-N5XTFmojgQRHbj_T6lOOUPE';
-  // if (window.location.href.match(/localhost|smarto/)) key = '';
+  let key = document.querySelectorAll('#map').dataset.key;
+  // if (window.location.href.match(/localhost|smarto/)) key = ''; 'AIzaSyCYwk23aIR-N5XTFmojgQRHbj_T6lOOUPE'
   // const key = '';
   script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap&language=${document.documentElement.getAttribute(
     'lang',
@@ -16,7 +16,7 @@ async function func() {
   document.getElementsByTagName('head')[0].appendChild(script);
 }
 // setTimeout(func, 1000);
-const maps = document.querySelectorAll('.map');
+
 const options = {
   rootMargin: '0px',
   threshold: 0.1,
